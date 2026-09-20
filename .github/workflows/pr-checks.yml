@@ -1,0 +1,44 @@
+name: PR checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    name: Static site verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Syntax-check JavaScript
+        run: node --check fixes.js
+
+      - name: Verify page wiring
+        run: |
+          test -f "finaljordan(1).html" || { echo "finaljordan(1).html missing"; exit 1; }
+          grep -Fq '<script src="fixes.js" defer></script>' "finaljordan(1).html" \
+            || { echo "fixes.js is not referenced from the page head"; exit 1; }
+          grep -Fq 'moved-brain-speech' "finaljordan(1).html" \
+            || { echo "cardiac-arrest brain bubble rule missing"; exit 1; }
+          grep -Fq 'brainScene.brainScene' fixes.js \
+            || { echo "brain-injury grid override missing"; exit 1; }
+          grep -Fq "jogu.png" fixes.js && grep -Fq "nanamei.png" fixes.js \
+            || { echo "overlay wiring missing"; exit 1; }
+
+      - name: Report optional overlay assets
+        run: |
+          for f in jogu.png nanamei.png; do
+            if [ ! -f "$f" ]; then
+              echo "::warning::$f is not in the repository; its overlay stays hidden until the file is added."
+            else
+              echo "$f present."
+            fi
+          done
