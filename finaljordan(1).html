@@ -548,6 +548,37 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 .page[data-page="8"] .dashboard>.mini-lung>.speech{
   font-size:14.5px!important;
 }
+.page[data-page="8"] .oxygenCard{
+  position:relative!important;
+  display:grid!important;
+  place-items:center!important;
+  align-content:center!important;
+  gap:12px!important;
+  overflow:visible!important;
+}
+.page[data-page="8"] .oxygenCard>.o2bubble,
+.page[data-page="8"] .oxygenCard>strong,
+.page[data-page="8"] .oxygenCard>span{
+  position:relative!important;
+  inset:auto!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:auto!important;
+}
+.page[data-page="8"] .oxygenCard>.o2bubble{
+  font-size:26px!important;
+}
+.page[data-page="8"] .oxygenCard>strong{
+  font-size:29px!important;
+}
+.page[data-page="8"] .oxygenCard>span{
+  font-size:15px!important;
+}
+.page[data-page="8"] .mini-lung>.lungsico{
+  position:relative!important;
+  top:-15px!important;
+}
 .page[data-page="10"] .cprVisual{
   left:calc(13% - 25px)!important;
 }
@@ -1503,6 +1534,26 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
     set(el,'font-size','14.5px');
     set(el,'transform','translateX(-50%)');
   });
+  const oxygen=p?.querySelector('.oxygenCard');
+  if(oxygen){
+    ['.o2bubble','strong','span'].forEach(selector=>{
+      const el=oxygen.querySelector(selector);
+      set(el,'position','relative');
+      ['inset','left','right','top','bottom'].forEach(prop=>set(el,prop,'auto'));
+    });
+    set(oxygen,'display','grid');
+    set(oxygen,'place-items','center');
+    set(oxygen,'align-content','center');
+    set(oxygen,'gap','12px');
+    set(oxygen.querySelector('.o2bubble'),'font-size','26px');
+    set(oxygen.querySelector('strong'),'font-size','29px');
+    set(oxygen.querySelector('span'),'font-size','15px');
+  }
+  const miniLung=p?.querySelector('.mini-lung>.lungsico');
+  if(miniLung){
+    set(miniLung,'position','relative');
+    set(miniLung,'top','-15px');
+  }
 
   // Page 11: keep the badge lower, the explanatory note slightly higher, and the CPR animation.
   p=page(10);
