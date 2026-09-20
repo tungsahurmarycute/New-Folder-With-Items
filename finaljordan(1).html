@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>jordan's drowning</title>
+<style>
+:root{--bg:#071412;--panel:#0d211c;--panel2:#102c24;--line:#315b4d;--text:#effff8;--muted:#b9d4c8;--mint:#7ce0b1;--cyan:#74d9f4;--pink:#ff8ea6;--red:#f2556e;--gold:#ffe49a;--blue:#5ecaf0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#12382d 0,#071412 42%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.shell{display:grid;grid-template-columns:285px 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;overflow:auto;padding:22px 16px;background:#06100e;border-right:1px solid var(--line);z-index:100}.brand{font-size:21px;font-weight:1000;letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:700;margin-top:5px;line-height:1.4}.tools{display:flex;gap:7px;margin:18px 0 14px}.tool{flex:1;padding:9px 7px;border-radius:10px;border:1px solid var(--line);background:#0e2a22;color:#eafff4;font-weight:900;cursor:pointer}.tool:hover{background:#174337}.nav{display:grid;gap:4px}.nav button{border:1px solid transparent;background:transparent;color:#c8ded4;text-align:left;padding:9px 10px;border-radius:10px;cursor:pointer;font-weight:800;display:flex;gap:9px;align-items:center}.nav button span{color:var(--mint);width:26px}.nav button:hover{background:#0d2b23}.nav button.active{background:#164536;border-color:#3b7c66;color:white}
+main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:22px}.badge{background:#10352b;border:1px solid #2e6654;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:1000;color:#b7f2d4}.page{display:none}.page.active{display:block}.eyebrow{color:var(--mint);font-size:11px;font-weight:1000;letter-spacing:1.5px}.page h1{font-size:clamp(31px,5vw,58px);line-height:.98;letter-spacing:-1.8px;margin:9px 0 9px}.sub{font-size:18px;color:#d4ebe1;font-weight:750;margin:0 0 10px}.body{max-width:930px;font-size:16px;line-height:1.65;color:#bfd8cd;margin:0}.take{margin:16px 0 20px;padding:13px 15px;border:1px solid #6c5929;background:#211d10;color:#ffe9a8;border-radius:13px;line-height:1.5}.take b{color:#fff4c6}.scene{position:relative;min-height:520px;border:2px solid #2f5e50;border-radius:24px;background:linear-gradient(145deg,#0b211b,#081713);overflow:hidden;box-shadow:0 18px 45px #0005;margin:22px 0}.scene-title{position:absolute;left:17px;right:17px;top:14px;z-index:30;background:#f7fff9;color:#18342b;border:3px solid #183e32;border-radius:12px;padding:10px 13px;font-weight:1000;box-shadow:0 4px 0 #06100d}.speech{position:absolute;z-index:40;max-width:250px;background:#fff;color:#19352b;border:3px solid #17392e;border-radius:18px;padding:10px 13px;font-size:16px;font-weight:950;line-height:1.15;box-shadow:0 5px 0 #06100d}.speech.small{max-width:190px;font-size:13px}.ico{display:block;width:100%;height:auto}.lungsico{max-width:390px}.heartico{max-width:250px}.brainico{max-width:330px}.alveolusico{max-width:220px}.capico{max-width:330px}.personico{max-width:180px}.ambulance{max-width:230px}.monitorico{max-width:340px}.label,.mini-label,.zoneTag{display:inline-block;background:#f7fff9;color:#17352b;border:2px solid #183e32;border-radius:8px;padding:5px 8px;font-size:11px;font-weight:1000}.splitScene{height:100%;min-height:520px;display:grid;grid-template-columns:1fr 1.2fr;gap:15px;padding:82px 28px 25px}.person-card,.organ-card{position:relative;display:grid;place-items:center;align-content:center;background:#0d2a22;border:1px solid #2b594b;border-radius:20px;min-height:405px}.person-card .personico{height:285px}.person-card .speech{left:15px;top:70px}.organ-card .speech{right:15px;top:55px}.organ-card .label{position:absolute;bottom:18px}.waterScene{position:absolute;inset:0;background:linear-gradient(#8adcf455 0 33%,#166f86 34% 100%);overflow:hidden}.sun{position:absolute;right:8%;top:80px;font-size:65px}.waveLine{position:absolute;left:-5%;width:110%;height:65px;border-top:7px solid #c8f6ff;border-radius:50%;opacity:.65}.w1{top:205px}.w2{top:300px}.swimmer{position:absolute;left:28%;top:170px;width:170px;transform:rotate(-8deg)}.waterdrop{position:absolute;right:17%;bottom:85px;width:95px}.waterdrop .waterico{filter:drop-shadow(0 8px 4px #0003)}.timeline-pill{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);background:#f7fff9;color:#17352b;border:3px solid #17392e;padding:9px 13px;border-radius:999px;font-weight:1000;white-space:nowrap}.airwayScene{position:absolute;inset:0;padding-top:80px}.airwayScene>.lungsico{position:absolute;right:18%;top:90px;width:420px}.water-stream{position:absolute;left:23%;top:105px;width:100px;z-index:15}.water-stream .waterico{width:80px}.trachea-label{position:absolute;left:48%;top:120px;color:#a7e6d0;font-weight:1000;letter-spacing:1px}.arrow{position:absolute;left:40%;top:210px;font-size:60px;color:#6bd6f1}.plain-box{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);background:#0f3128;border:1px solid #3d8069;border-radius:12px;padding:12px 16px;font-weight:900}.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:85px 28px 25px;height:100%}.compare-card{position:relative;min-height:390px;border-radius:20px;border:2px solid #3c7763;background:#0d2a22;display:grid;place-items:center;align-content:center;text-align:center;padding:20px}.compare-card.good{box-shadow:inset 0 0 0 3px #2a6d57}.compare-card.bad{box-shadow:inset 0 0 0 3px #75404d}.compare-card h3{margin:4px 0;font-size:24px}.compare-card p{color:#bfd9ce;margin:0}.coating{position:absolute;inset:105px 100px;border:8px dashed #ffe27b;border-radius:50%;pointer-events:none}.droplets{position:absolute;right:12%;top:18%;font-size:25px}.big-caption{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);padding:11px 15px;background:#f7fff9;color:#17352b;border:3px solid #17392e;border-radius:12px;font-weight:950;max-width:85%;text-align:center}.barrierScene{display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:12px;height:100%;min-height:520px;padding:90px 35px 80px}.side{height:350px;background:#0e2c23;border:2px solid #326a56;border-radius:20px;display:grid;place-items:center;align-content:center;position:relative}.sideTitle{position:absolute;top:13px;left:13px;font-weight:1000;color:#a7e8cd}.side span{font-weight:1000;color:#bfe8da}.wallIcon{text-align:center}.wall{background:#dceee7;color:#19362c;border:4px solid #345e51;border-radius:13px;padding:25px 8px;font-weight:1000;writing-mode:vertical-rl;margin:auto}.leakDots{color:#64d7f2;font-size:22px;line-height:1.7;margin-top:10px}.edemaScene{position:absolute;inset:0}.lungs-half{position:absolute;left:9%;top:80px;width:500px}.fluid-pool{position:absolute;right:15%;top:135px;width:250px}.fluid-pool .alveolusico{max-width:250px}.secretions{position:absolute;right:8%;bottom:105px;background:#f8b0bd;color:#59293a;border:3px solid #5f3040;border-radius:14px;padding:12px;font-weight:1000;text-align:center}.shuntScene{position:absolute;inset:90px 25px 80px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.lung-zone,.cap-zone{height:300px;border-radius:20px;background:#0d2b23;border:2px solid #326a56;display:grid;place-items:center;position:relative}.zoneTag{position:absolute;bottom:13px}.cap-zone .capico{max-width:330px}.bloodCell{position:absolute;width:26px;height:18px;border-radius:50%;background:#d94e62;border:3px solid #73283a;top:42%;animation:flow 3.2s linear infinite}.b1{left:42%}.b2{left:52%;animation-delay:.8s}.b3{left:62%;animation-delay:1.6s}@keyframes flow{0%{transform:translateX(-80px)}100%{transform:translateX(160px)}}.shuntArrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#f7fff9;color:#17352b;border:3px solid #17392e;padding:10px;border-radius:12px;font-weight:1000}.dashboard{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;padding:105px 28px 95px;height:100%}.abgCard,.oxygenCard{border-radius:20px;background:#0d2a22;border:2px solid #376d5a;padding:20px}.abgTitle{font-size:25px;font-weight:1000;margin-bottom:15px}.abgCard>div{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:10px 0;border-bottom:1px solid #31584b}.abgCard strong{font-size:27px}.abgCard small{color:#9fc5b7}.danger{color:#ff9baa}.oxygenCard{display:grid;place-items:center;align-content:center;text-align:center;gap:12px}.oxygenCard strong{font-size:30px}.oxygenCard span{color:#b9d5ca}.o2bubble{width:90px;height:90px;border-radius:50%;display:grid;place-items:center;background:#76d9f3;color:#16465b;border:6px solid #dffbff;font-size:27px;font-weight:1000;animation:pulse 2s infinite}@keyframes pulse{50%{transform:scale(1.08)}}.mini-lung{display:grid;place-items:center;background:#0d2a22;border:2px solid #376d5a;border-radius:20px}.arrestScene,.roscScene{position:absolute;inset:0}.heartWrap,.cprVisual{position:absolute;left:15%;top:125px;width:260px}.monitorWrap{position:absolute;right:8%;top:120px;width:400px}.alert,.roscbadge{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);padding:11px 20px;border-radius:999px;font-size:24px;font-weight:1000}.alert{background:#571827;color:#ff9baa;border:2px solid #e55a72}.roscbadge{background:#184e3b;color:#9af1c8;border:2px solid #59c895}.cprHands{position:absolute;z-index:20;left:105px;top:90px;font-size:70px;transform:rotate(-10deg);animation:compress .8s infinite}@keyframes compress{50%{transform:translateY(18px) rotate(-10deg)}}.cprVisual .heartico{margin-top:70px}.note{position:absolute;left:50%;bottom:27px;transform:translateX(-50%);background:#f7fff9;color:#17352b;border:3px solid #17392e;padding:9px 13px;border-radius:12px;font-weight:950}.brainScene{position:absolute;inset:0}.brainWrap{position:absolute;left:14%;top:125px;width:430px}.ctIcon{position:absolute;right:15%;top:140px;width:190px;height:160px;border-radius:20px;background:#cbd3d6;color:#47535a;border:6px solid #67757d;display:grid;place-items:center;font-size:55px;font-weight:1000}.ctIcon.big{position:relative;right:auto;top:auto;width:110px;height:90px;font-size:30px}.brainTags{position:absolute;left:48%;bottom:55px;display:flex;gap:12px}.brainTags span{padding:10px 13px;background:#52253b;border:2px solid #d982a7;border-radius:12px;text-align:center;font-weight:1000}.faded{opacity:.45}.careGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;padding:85px 25px 25px}.careItem{min-height:185px;border:2px solid #326a56;background:#0d2b23;border-radius:17px;display:grid;place-items:center;align-content:center;text-align:center;padding:12px}.careItem .ico{height:90px;max-width:130px}.careItem .thermo{font-size:65px;height:90px;display:grid;place-items:center}.timeline{display:flex;align-items:center;gap:9px;padding:120px 45px 40px}.timebox{flex:1;min-height:150px;border:2px solid #326a56;background:#0d2b23;border-radius:17px;padding:20px;display:grid;align-content:center;text-align:center}.timebox strong{font-size:25px;color:#a8f0cc}.timebox span{margin-top:10px;color:#bcd8cc;line-height:1.4}.line{height:5px;width:40px;background:#59c99a;border-radius:10px}.testIcons{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:0 50px}.testIcons>div{display:grid;place-items:center;gap:7px}.testIcons .ico{height:80px;max-width:130px}.ssep{width:120px;height:80px;border:3px solid #8fb8ab;border-radius:12px;display:grid;place-items:center;font-weight:1000;color:#aaf0d0;background:#0d2b23}.finalChain{padding:90px 30px 75px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.finalChain div{border:2px solid #376e5b;background:#0e2b23;border-radius:10px;padding:10px;font-weight:900;line-height:1.25}.finalChain span{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#7ce0b1;color:#12372b;margin-right:6px}.finalPunch{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);max-width:85%;background:#f7fff9;color:#17352b;border:3px solid #17392e;border-radius:14px;padding:12px 15px;text-align:center;font-weight:1000}
+.bottomNav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.pageBtn{padding:11px 16px;border-radius:12px;border:1px solid #376e5b;background:#10352b;color:#eafff5;font-weight:1000;cursor:pointer}.pageBtn:disabled{opacity:.35;cursor:not-allowed}
+.editable{transition:outline .15s}.editing .editable{outline:2px dashed #ffe49a;outline-offset:3px}.editHint{display:none;padding:10px;border-radius:10px;background:#352d16;color:#ffe9a8;margin-bottom:14px;font-size:12px}.editingMode .editHint{display:block}
+.footer{margin-top:35px;color:#7fa89b;font-size:11px;line-height:1.5;border-top:1px solid #23483c;padding-top:15px}
+@media(max-width:900px){.shell{display:block}aside{position:relative;height:auto;max-height:310px}.nav{grid-template-columns:repeat(2,1fr)}main{padding:24px 15px}.dashboard{grid-template-columns:1fr 1fr}.careGrid{grid-template-columns:repeat(2,1fr)}.splitScene{grid-template-columns:1fr 1fr}.lungsico{max-width:290px}.monitorWrap{width:320px;right:3%}.heartWrap,.cprVisual{left:6%}.brainWrap{width:360px;left:4%}.ctIcon{right:5%}}
+@media(max-width:600px){.nav{grid-template-columns:1fr}.scene{min-height:650px}.splitScene,.compare,.dashboard,.careGrid,.finalChain{grid-template-columns:1fr}.splitScene{padding-top:82px}.person-card,.organ-card{min-height:260px}.person-card .personico{height:210px}.airwayScene>.lungsico{right:2%;top:170px;width:310px}.water-stream{left:10%}.timeline-pill{white-space:normal;width:90%;text-align:center}.barrierScene{grid-template-columns:1fr;gap:5px;padding-top:85px}.side{height:175px}.wallIcon{display:flex;align-items:center;justify-content:center}.shuntScene{grid-template-columns:1fr;padding:90px 15px 100px}.lung-zone,.cap-zone{height:220px}.bloodCell{display:none}.shuntArrow{top:49%}.dashboard{padding-top:95px}.mini-lung{min-height:230px}.monitorWrap{width:250px;top:330px;right:50%;transform:translateX(50%)}.heartWrap,.cprVisual{top:125px;left:50%;transform:translateX(-50%)}.brainWrap{top:120px;left:50%;transform:translateX(-50%);width:310px}.ctIcon{top:330px;right:50%;transform:translateX(50%)}.brainTags{left:50%;transform:translateX(-50%);bottom:25px}.careItem{min-height:150px}.timeline{display:grid;padding:100px 18px 25px}.line{width:5px;height:25px;margin:auto}.testIcons{padding:0 25px}.finalChain{padding-top:85px}.finalPunch{max-width:90%;font-size:12px}.speech{font-size:12px;max-width:180px}}
+</style>
+
+
+
+
+<style id="cleanSpeechArrangement">
+/* CLEAN ARRANGEMENT V2 — fixed, balanced speech/media placement. */
+.scene > .speech{z-index:60;box-sizing:border-box;max-width:260px;}
+/* Page 02 — keep the sun visible and separate the two speech bubbles. */
+.page[data-page="1"] .waterScene .speech:nth-of-type(1){left:18px!important;top:82px!important;right:auto!important;bottom:auto!important;}
+.page[data-page="1"] .waterScene .speech:nth-of-type(2){right:18px!important;top:128px!important;left:auto!important;bottom:auto!important;}
+/* Page 03 — speech occupies the upper corners; lungs stay centered below it. */
+.page[data-page="2"] .airwayScene>.lungsico{right:50%!important;transform:translateX(50%);top:132px!important;width:390px!important;}
+.page[data-page="2"] .airwayScene .water-stream{left:18%!important;top:118px!important;}
+.page[data-page="2"] .airwayScene .trachea-label{left:50%!important;transform:translateX(-50%);top:462px!important;}
+.page[data-page="2"] .airwayScene .speech:nth-of-type(1){left:18px!important;top:70px!important;right:auto!important;bottom:auto!important;}
+.page[data-page="2"] .airwayScene .speech:nth-of-type(2){right:18px!important;top:70px!important;left:auto!important;bottom:auto!important;}
+.page[data-page="2"] .airwayScene .plain-box{bottom:22px!important;}
+/* Page 04 — bubbles belong with their matching before/after boxes. */
+.page[data-page="3"] .compare{padding-top:108px!important;padding-bottom:70px!important;}
+.page[data-page="3"] .compare-card{min-height:370px!important;}
+.page[data-page="3"] > .scene>.speech{top:70px!important;bottom:auto!important;width:42%!important;max-width:300px!important;text-align:center;}
+.page[data-page="3"] > .scene>.speech:nth-of-type(1){left:4%!important;right:auto!important;}
+.page[data-page="3"] > .scene>.speech:nth-of-type(2){right:4%!important;left:auto!important;}
+/* Page 06 — centered text inside each side box, never below/outside it. */
+.page[data-page="5"] .barrierScene{padding-top:88px!important;padding-bottom:72px!important;}
+.page[data-page="5"] .barrierScene .side{overflow:visible;}
+.page[data-page="5"] > .scene>.speech{top:auto!important;bottom:92px!important;width:38%!important;max-width:300px!important;text-align:center;}
+.page[data-page="5"] > .scene>.speech:nth-of-type(1){left:5%!important;right:auto!important;}
+.page[data-page="5"] > .scene>.speech:nth-of-type(2){right:5%!important;left:auto!important;}
+/* Page 07 — lower the lungs and secretions so the right speech has clear space. */
+.page[data-page="6"] .lungs-half{top:112px!important;}
+.page[data-page="6"] .fluid-pool{top:145px!important;}
+.page[data-page="6"] .secretions{right:8%!important;bottom:58px!important;}
+.page[data-page="6"] > .scene .speech:nth-of-type(1){left:5%!important;top:78px!important;right:auto!important;}
+.page[data-page="6"] > .scene .speech:nth-of-type(2){right:5%!important;top:78px!important;left:auto!important;}
+/* Page 09 — keep O2 centered in its card and the lung speech in the lung card. */
+.page[data-page="8"] .dashboard{padding-bottom:82px!important;}
+.page[data-page="8"] > .scene>.speech{bottom:24px!important;top:auto!important;width:38%!important;max-width:310px!important;text-align:center;}
+.page[data-page="8"] > .scene>.speech:nth-of-type(1){left:3%!important;right:auto!important;}
+.page[data-page="8"] > .scene>.speech:nth-of-type(2){right:3%!important;left:auto!important;}
+/* Page 10 — speech sits on the corresponding visual, centered at the top of each box. */
+.page[data-page="9"] .heartWrap{left:12%!important;top:150px!important;}
+.page[data-page="9"] .monitorWrap{right:8%!important;top:150px!important;}
+.page[data-page="9"] > .scene .speech:nth-of-type(1){left:12%!important;top:106px!important;right:auto!important;width:260px!important;text-align:center;}
+.page[data-page="9"] > .scene .speech:nth-of-type(2){right:9%!important;top:102px!important;left:auto!important;width:300px!important;text-align:center;}
+/* Page 11 — CPR speech near the hands; returned-heart speech centered over the monitor. */
+.page[data-page="10"] .cprVisual{left:13%!important;top:155px!important;}
+.page[data-page="10"] .monitorWrap{right:8%!important;top:150px!important;}
+.page[data-page="10"] > .scene .speech:nth-of-type(1){left:9%!important;top:105px!important;right:auto!important;width:260px!important;text-align:center;}
+.page[data-page="10"] > .scene .speech:nth-of-type(2){right:8%!important;top:102px!important;left:auto!important;width:270px!important;text-align:center;}
+/* Page 12 — balanced brain/CT composition with readable bubbles. */
+.page[data-page="11"] .brainWrap{left:11%!important;top:150px!important;width:390px!important;}
+.page[data-page="11"] .ctIcon{right:14%!important;top:155px!important;}
+.page[data-page="11"] .o2bubble{left:44%!important;top:230px!important;position:absolute;}
+.page[data-page="11"] .brainTags{left:50%!important;transform:translateX(-50%);bottom:48px!important;}
+.page[data-page="11"] > .scene .speech:nth-of-type(1){left:8%!important;top:92px!important;right:auto!important;width:260px!important;text-align:center;}
+.page[data-page="11"] > .scene .speech:nth-of-type(2){right:7%!important;top:92px!important;left:auto!important;width:320px!important;text-align:center;}
+/* Page 15 — final takeaway is a real footer, not an overlay. */
+.page[data-page="14"] .finalChain{padding:78px 30px 10px!important;gap:8px!important;}
+.page[data-page="14"] .finalPunch{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;max-width:none!important;margin:8px 30px 18px!important;z-index:20;}
+.page[data-page="14"] .scene:has(.finalChain){display:flex;flex-direction:column;}
+@media(max-width:600px){
+  .scene > .speech{max-width:44%;font-size:12px;line-height:1.18;padding:8px 10px;}
+  .page[data-page="2"] .airwayScene>.lungsico{top:170px!important;width:300px!important;}
+  .page[data-page="2"] .airwayScene .trachea-label{top:478px!important;font-size:10px;}
+  .page[data-page="2"] .airwayScene .speech{top:74px!important;max-width:42%!important;}
+  .page[data-page="3"] .compare{padding-top:112px!important;}
+  .page[data-page="3"] > .scene>.speech{top:72px!important;width:43%!important;}
+  .page[data-page="5"] > .scene>.speech{bottom:76px!important;width:41%!important;}
+  .page[data-page="6"] .lungs-half{top:155px!important;left:50%!important;transform:translateX(-50%);width:330px!important;}
+  .page[data-page="6"] .fluid-pool{top:350px!important;right:50%!important;transform:translateX(50%);width:150px!important;}
+  .page[data-page="6"] .secretions{right:50%!important;transform:translateX(50%);bottom:72px!important;}
+  .page[data-page="6"] > .scene .speech{top:82px!important;}
+  .page[data-page="8"] > .scene>.speech{bottom:25px!important;width:43%!important;}
+  .page[data-page="9"] .heartWrap{top:165px!important;left:50%!important;transform:translateX(-50%);}
+  .page[data-page="9"] .monitorWrap{top:385px!important;right:50%!important;transform:translateX(50%);}
+  .page[data-page="9"] > .scene .speech:nth-of-type(1){left:50%!important;transform:translateX(-50%);top:78px!important;width:45%!important;}
+  .page[data-page="9"] > .scene .speech:nth-of-type(2){right:50%!important;transform:translateX(50%);top:330px!important;width:48%!important;}
+  .page[data-page="10"] .cprVisual{top:165px!important;left:50%!important;transform:translateX(-50%);}
+  .page[data-page="10"] .monitorWrap{top:385px!important;right:50%!important;transform:translateX(50%);}
+  .page[data-page="10"] > .scene .speech:nth-of-type(1){left:50%!important;transform:translateX(-50%);top:82px!important;width:45%!important;}
+  .page[data-page="10"] > .scene .speech:nth-of-type(2){right:50%!important;transform:translateX(50%);top:330px!important;width:48%!important;}
+  .page[data-page="11"] .brainWrap{top:165px!important;left:50%!important;transform:translateX(-50%);width:300px!important;}
+  .page[data-page="11"] .ctIcon{top:410px!important;right:50%!important;transform:translateX(50%);}
+  .page[data-page="11"] .o2bubble{left:50%!important;top:335px!important;transform:translateX(-50%);}
+  .page[data-page="11"] .brainTags{bottom:72px!important;}
+  .page[data-page="11"] > .scene .speech:nth-of-type(1){left:50%!important;transform:translateX(-50%);top:82px!important;width:44%!important;}
+  .page[data-page="11"] > .scene .speech:nth-of-type(2){right:50%!important;transform:translateX(50%);top:330px!important;width:48%!important;}
+  .page[data-page="14"] .finalChain{padding:100px 18px 8px!important;}
+  .page[data-page="14"] .finalPunch{margin:8px 18px 16px!important;}
+
+  .scene > .speech.clean-left{left:10px!important;top:70px!important;}
+  .scene > .speech.clean-right{right:10px!important;top:70px!important;}
+  .scene > .speech.clean-left.clean-bottom,.scene > .speech.clean-right.clean-bottom{bottom:62px!important;top:auto!important;}
+}
+</style>
+<style id="finalPreciseLayoutFixes">
+/* FINAL PRECISE LAYOUT FIXES — visual placement only; existing artwork preserved. */
+.page h1{margin:14px 0 16px!important}.sub{line-height:1.45;margin-bottom:16px!important}.eyebrow{display:none!important}.take b{font-size:0}.take b::after{content:"see:";font-size:16px}
+/* PAGE 1 — keep both bubbles inside their cards, beside the matching visual. */
+.page[data-page="0"] .person-card>.speech{left:50%!important;right:auto!important;top:auto!important;bottom:12px!important;transform:translateX(-50%)!important;width:78%!important;max-width:220px!important;text-align:center;}
+.page[data-page="0"] .organ-card>.speech{left:50%!important;right:auto!important;top:auto!important;bottom:12px!important;transform:translateX(-50%)!important;width:78%!important;max-width:210px!important;text-align:center;}
+.page[data-page="0"] .organ-card>.label{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);}
+/* PAGE 3 — lungs centered and lower; bubbles live in the upper corners without covering the lungs. */
+.page[data-page="2"] .airwayScene>.lungsico{position:absolute!important;left:50%!important;right:auto!important;top:155px!important;transform:translateX(-50%)!important;width:360px!important;z-index:10;}
+.page[data-page="2"] .airwayScene .water-stream{left:10%!important;top:135px!important;z-index:15;}
+.page[data-page="2"] .airwayScene .speech:nth-of-type(1){left:4%!important;top:72px!important;width:190px!important;z-index:60;}
+.page[data-page="2"] .airwayScene .speech:nth-of-type(2){right:4%!important;top:72px!important;width:210px!important;z-index:60;}
+.page[data-page="2"] .airwayScene .trachea-label{top:470px!important;}
+/* PAGE 4 — the yellow surfactant coating follows the alveolus instead of being a loose circle. */
+.page[data-page="3"] .compare-card.good .coating{inset:0!important;left:50%!important;top:108px!important;width:220px!important;height:185px!important;transform:translateX(-50%)!important;border:7px dashed #ffe27b!important;border-radius:48% 52% 50% 46% / 45% 48% 52% 55%!important;z-index:4!important;}
+.page[data-page="3"] .compare-card.good .alveolusico{position:relative;z-index:5;}
+.page[data-page="3"] .compare-card{position:relative;}
+.page[data-page="3"]>.scene>.speech:nth-of-type(1){left:4%!important;top:405px!important;bottom:auto!important;width:42%!important;}
+.page[data-page="3"]>.scene>.speech:nth-of-type(2){right:4%!important;top:405px!important;bottom:auto!important;width:42%!important;}
+/* PAGE 6 — Barrier bubble centered under the barrier, not under the left box. */
+.page[data-page="5"]>.scene>.speech:nth-of-type(1){left:50%!important;right:auto!important;bottom:30px!important;top:auto!important;transform:translateX(-50%)!important;width:300px!important;max-width:48%!important;}
+.page[data-page="5"]>.scene>.speech:nth-of-type(2){right:7%!important;left:auto!important;bottom:30px!important;top:auto!important;width:190px!important;}
+/* PAGE 7 — three visual callouts: alveoli, fluid, and frothy secretions. */
+.page[data-page="6"] .lungs-half{top:155px!important;left:31%!important;transform:translateX(-50%)!important;width:330px!important;}
+.page[data-page="6"] .fluid-pool{top:170px!important;right:18%!important;}
+.page[data-page="6"] .secretions{right:12%!important;bottom:70px!important;}
+.page[data-page="6"]>.scene .speech:nth-of-type(1){left:4%!important;top:82px!important;right:auto!important;width:190px!important;}
+.page[data-page="6"]>.scene .speech:nth-of-type(2){right:4%!important;top:92px!important;left:auto!important;width:190px!important;}
+/* Treat the frothy-secretions label as the third callout and keep it clear of the fluid bubble. */
+.page[data-page="6"] .secretions{z-index:55!important;}
+/* PAGE 8 — both speech bubbles sit inside the corresponding card/visual area. */
+.page[data-page="8"]>.scene>.speech:nth-of-type(1){left:17%!important;right:auto!important;bottom:90px!important;top:auto!important;width:220px!important;max-width:30%!important;}
+.page[data-page="8"]>.scene>.speech:nth-of-type(2){right:8%!important;left:auto!important;bottom:90px!important;top:auto!important;width:240px!important;max-width:32%!important;}
+.page[data-page="8"] .oxygenCard{position:relative;}
+.page[data-page="8"] .mini-lung{position:relative;}
+/* PAGE 10 — heart icon centered in its side; bubbles directly above matching visuals. */
+.page[data-page="9"] .heartWrap{left:18%!important;right:auto!important;top:175px!important;width:250px!important;}
+.page[data-page="9"] .monitorWrap{right:12%!important;top:175px!important;width:360px!important;}
+.page[data-page="9"]>.scene .speech:nth-of-type(1){left:18%!important;right:auto!important;top:110px!important;width:250px!important;transform:none!important;}
+.page[data-page="9"]>.scene .speech:nth-of-type(2){right:12%!important;left:auto!important;top:110px!important;width:300px!important;transform:none!important;}
+/* PAGE 11 — CPR bubble belongs above hands; returned-heart bubble belongs above heart/monitor, not off to the side. */
+.page[data-page="10"] .cprVisual{left:18%!important;top:175px!important;width:260px!important;}
+.page[data-page="10"] .monitorWrap{right:12%!important;top:175px!important;width:360px!important;}
+.page[data-page="10"]>.scene .speech:nth-of-type(1){left:17%!important;right:auto!important;top:105px!important;width:250px!important;}
+.page[data-page="10"]>.scene .speech:nth-of-type(2){left:auto!important;right:12%!important;top:105px!important;width:260px!important;}
+/* PAGE 12 — stack brain + CT cleanly and keep both bubbles attached to their visual. */
+.page[data-page="11"] .brainWrap{left:17%!important;top:165px!important;width:330px!important;}
+.page[data-page="11"] .ctIcon{right:16%!important;top:185px!important;}
+.page[data-page="11"] .o2bubble{left:49%!important;top:330px!important;}
+.page[data-page="11"]>.scene .speech:nth-of-type(1){left:15%!important;right:auto!important;top:95px!important;width:240px!important;}
+.page[data-page="11"]>.scene .speech:nth-of-type(2){right:10%!important;left:auto!important;top:95px!important;width:300px!important;}
+/* PAGE 14 — lower the humor caption slightly. */
+.page[data-page="13"] .big-caption{bottom:8px!important;}
+/* PAGE 14 navigation — restore the Next button. */
+.page[data-page="13"] .bottomNav{justify-content:space-between!important;}
+.page[data-page="13"] .bottomNav .next{display:inline-block!important;}
+/* PAGE 15 — intentionally no Next button. */
+@media(max-width:600px){
+ .page[data-page="0"] .person-card>.speech,.page[data-page="0"] .organ-card>.speech{bottom:8px!important;width:82%!important;}
+ .page[data-page="2"] .airwayScene>.lungsico{top:175px!important;width:290px!important;}
+ .page[data-page="2"] .airwayScene .speech:nth-of-type(1){left:3%!important;top:76px!important;width:42%!important;}
+ .page[data-page="2"] .airwayScene .speech:nth-of-type(2){right:3%!important;top:76px!important;width:43%!important;}
+ .page[data-page="3"] .compare-card.good .coating{top:108px!important;width:170px!important;height:145px!important;}
+ .page[data-page="3"]>.scene>.speech:nth-of-type(1),.page[data-page="3"]>.scene>.speech:nth-of-type(2){top:auto!important;bottom:82px!important;width:42%!important;}
+ .page[data-page="5"]>.scene>.speech:nth-of-type(1){bottom:70px!important;max-width:48%!important;}
+ .page[data-page="5"]>.scene>.speech:nth-of-type(2){bottom:70px!important;right:3%!important;}
+ .page[data-page="6"] .lungs-half{left:50%!important;top:170px!important;width:280px!important;}
+ .page[data-page="6"] .fluid-pool{right:50%!important;top:330px!important;transform:translateX(50%)!important;}
+ .page[data-page="6"] .secretions{right:50%!important;bottom:70px!important;transform:translateX(50%)!important;}
+ .page[data-page="6"]>.scene .speech:nth-of-type(1){left:3%!important;top:84px!important;width:43%!important;}
+ .page[data-page="6"]>.scene .speech:nth-of-type(2){right:3%!important;top:84px!important;width:43%!important;}
+ .page[data-page="8"]>.scene>.speech:nth-of-type(1),.page[data-page="8"]>.scene>.speech:nth-of-type(2){bottom:70px!important;max-width:43%!important;width:43%!important;}
+ .page[data-page="9"] .heartWrap{left:50%!important;top:175px!important;transform:translateX(-50%)!important;}
+ .page[data-page="9"] .monitorWrap{right:50%!important;top:400px!important;transform:translateX(50%)!important;}
+ .page[data-page="9"]>.scene .speech:nth-of-type(1){left:50%!important;top:90px!important;transform:translateX(-50%)!important;width:44%!important;}
+ .page[data-page="9"]>.scene .speech:nth-of-type(2){right:50%!important;top:320px!important;transform:translateX(50%)!important;width:46%!important;}
+ .page[data-page="10"] .cprVisual{left:50%!important;top:175px!important;transform:translateX(-50%)!important;}
+ .page[data-page="10"] .monitorWrap{right:50%!important;top:400px!important;transform:translateX(50%)!important;}
+ .page[data-page="10"]>.scene .speech:nth-of-type(1){left:50%!important;top:90px!important;transform:translateX(-50%)!important;width:44%!important;}
+ .page[data-page="10"]>.scene .speech:nth-of-type(2){right:50%!important;top:320px!important;transform:translateX(50%)!important;width:44%!important;}
+ .page[data-page="11"] .brainWrap{left:50%!important;top:175px!important;transform:translateX(-50%)!important;width:280px!important;}
+ .page[data-page="11"] .ctIcon{right:50%!important;top:420px!important;transform:translateX(50%)!important;}
+ .page[data-page="11"]>.scene .speech:nth-of-type(1){left:50%!important;top:88px!important;transform:translateX(-50%)!important;width:44%!important;}
+ .page[data-page="11"]>.scene .speech:nth-of-type(2){right:50%!important;top:345px!important;transform:translateX(50%)!important;width:46%!important;}
+ .page[data-page="13"] .big-caption{bottom:4px!important;}
+}
+</style>
+<style id="speechBubbleCascadeFix">
+/* Keep nested speech bubbles readable and independent from illustration typography/position rules. */
+.page[data-page="9"] .arrestScene .heartWrap>.speech,
+.page[data-page="9"] .arrestScene .monitorWrap>.speech,
+.page[data-page="10"] .roscScene .cprVisual>.speech,
+.page[data-page="10"] .roscScene .monitorWrap>.speech{
+  left:50%!important;
+  right:auto!important;
+  top:-54px!important;
+  bottom:auto!important;
+  transform:translateX(-50%)!important;
+  width:min(260px,80vw)!important;
+  max-width:260px!important;
+}
+.page[data-page="11"] .brainScene .brainWrap>.speech,
+.page[data-page="11"] .brainScene .ctIcon>.speech{
+  left:50%!important;
+  right:auto!important;
+  top:-62px!important;
+  bottom:auto!important;
+  transform:translateX(-50%)!important;
+  width:min(260px,80vw)!important;
+  max-width:260px!important;
+}
+.page[data-page="11"] .brainScene .ctIcon>.speech{
+  top:-70px!important;
+  width:min(280px,80vw)!important;
+  max-width:280px!important;
+}
+</style>
+<style id="targetedVisualBalanceFix">
+/* Page 1: keep the Jordan illustration group higher in its card. */
+.page[data-page="0"] .person-card .mini-label{transform:translateY(-18px);}
+.page[data-page="0"] .person-card .personico{transform:translateY(-18px);}
+
+/* Page 3: keep the water stream slightly higher and farther left. */
+.page[data-page="2"] .airwayScene .water-stream{
+  left:7%!important;
+  top:112px!important;
+}
+
+/* Page 4: fit the surfactant outline to the alveolus artwork. */
+.page[data-page="3"] .compare-card.good .coating{
+  left:50%!important;
+  top:112px!important;
+  width:205px!important;
+  height:173px!important;
+  inset-inline:auto!important;
+  border-radius:48% 52% 49% 51% / 46% 48% 54% 52%!important;
+  transform:translateX(-50%)!important;
+}
+
+/* Page 10: lower both explanatory bubbles inside their side panels. */
+.page[data-page="5"] .barrierScene .side>.speech{
+  bottom:24px!important;
+}
+
+/* Page 11: lift the CPR hands and ROSC badge without changing the heart size. */
+.page[data-page="10"] .cprVisual .cprHands{
+  top:64px!important;
+}
+.page[data-page="10"] .roscScene>.roscbadge{
+  bottom:52px!important;
+}
+
+/* Page 9: lift the oxygen/lung contents without moving their cards. */
+.page[data-page="8"] .dashboard .oxygenCard,
+.page[data-page="8"] .dashboard .mini-lung{
+  transform:none!important;
+}
+.page[data-page="8"] .dashboard .oxygenCard .o2bubble,
+.page[data-page="8"] .dashboard .oxygenCard strong,
+.page[data-page="8"] .dashboard .oxygenCard span,
+.page[data-page="8"] .dashboard .mini-lung .lungsico{
+  position:relative;
+  top:-22px;
+}
+
+/* Keep the water drop lower and farther right in the opening scene. */
+.page[data-page="1"] .waterScene .waterdrop{
+  right:13%!important;
+  bottom:62px!important;
+}
+
+/* Lower the two opening-scene speech bubbles while keeping them in bounds. */
+.page[data-page="1"] .waterScene>.speech{
+  transform:translateY(34px);
+}
+</style>
+<style id="finalRequestedPlacementFix">
+/* Page 2: bring the right speech bubble farther inside the scene. */
+.page[data-page="1"] .waterScene>.waterdrop~.speech[style*="right: 18px"]{
+  right:48px!important;
+  top:160px!important;
+}
+.page[data-page="1"] .waterScene>.waterdrop~.speech[style*="right: auto"]{
+  left:8%!important;
+  top:116px!important;
+  right:auto!important;
+}
+.page[data-page="1"] .waterScene .waterdrop{
+  right:23%!important;
+  bottom:125px!important;
+}
+
+/* Page 3: keep the right airway bubble from crowding the edge. */
+.page[data-page="2"] .airwayScene>.lungsico~.speech[style*="right: 18px"]{
+  right:48px!important;
+  top:180px!important;
+}
+.page[data-page="2"] .airwayScene>.lungsico~.speech[style*="left: 18px"]{
+  left:8%!important;
+  top:180px!important;
+  right:auto!important;
+}
+.page[data-page="2"] .airwayScene .water-stream{
+  left:22%!important;
+  top:210px!important;
+}
+
+/* Page 4: the yellow guide follows the actual alveolus silhouette. */
+.page[data-page="3"] .compare-card.good .coating{
+  position:absolute!important;
+  inset:auto!important;
+  left:50%!important;
+  top:88px!important;
+  width:205px!important;
+  height:173px!important;
+  transform:translateX(-50%)!important;
+  border:7px dashed #ffe27b!important;
+  border-radius:48% 52% 49% 51% / 46% 48% 54% 52%!important;
+  z-index:4!important;
+}
+
+/* Page 6: raise the capillary illustration and lower its dialogue. */
+.page[data-page="5"] .cap-zone .capico{
+  transform:translateY(-50px);
+}
+.page[data-page="5"] .barrierScene .side .capico{
+  transform:translateY(-50px);
+}
+.page[data-page="5"] .barrierScene .side>.speech{
+  bottom:18px!important;
+}
+.page[data-page="5"] .barrierScene .side:nth-of-type(3)>.speech{
+  bottom:2px!important;
+}
+
+/* Page 11: restore the heart to its previous placement and lower the note. */
+.page[data-page="10"] .roscScene .cprVisual{
+  top:111px!important;
+}
+.page[data-page="10"] .roscScene .cprHands{
+  top:120px!important;
+}
+.page[data-page="10"] .roscScene .roscbadge{
+  bottom:84px!important;
+  font-size:20px!important;
+  padding:8px 16px!important;
+}
+.page[data-page="10"] .roscScene>.note{
+  bottom:4px!important;
+  font-size:14px!important;
+  padding:7px 11px!important;
+}
+
+/* Page 12: lower both diagnostic tags together. */
+.page[data-page="11"] .brainTags{
+  bottom:28px!important;
+}
+
+/* Keep paired bubbles on a common baseline with equal widths. */
+.page[data-page="9"] .arrestScene .heartWrap>.speech,
+.page[data-page="9"] .arrestScene .monitorWrap>.speech{
+  top:-42px!important;
+}
+.page[data-page="10"] .roscScene .cprVisual>.speech,
+.page[data-page="10"] .roscScene .monitorWrap>.speech{
+  top:-60px!important;
+}
+.page[data-page="10"] .roscScene .monitorWrap>.speech{
+  top:-124px!important;
+}
+@media(min-width:601px){
+  .page[data-page="11"] .brainWrap{
+    left:8%!important;
+  }
+  .page[data-page="11"] .brainScene .o2bubble{
+    left:38%!important;
+  }
+}
+@media(max-width:600px){
+  .page[data-page="11"] .brainWrap{
+    left:50%!important;
+    transform:translateX(-50%)!important;
+  }
+  .page[data-page="11"] .brainScene .o2bubble{
+    left:50%!important;
+    transform:translateX(-50%)!important;
+  }
+}
+.page[data-page="11"] .brainWrap>.speech,
+.page[data-page="11"] .ctIcon>.speech{
+  top:-78px!important;
+}
+.page[data-page="11"] .brainWrap>.speech{
+  left:50%!important;
+  transform:translateX(-50%)!important;
+}
+.page[data-page="11"] .ctIcon>.speech{
+  top:-96px!important;
+}
+.page[data-page="14"] .finalPunch{
+  margin-top:28px!important;
+}
+</style>
+<style id="surgicalRequestedEdits">
+.page[data-page="0"] .organ-card .lungsico{transform:translateY(-28px)!important;}
+.page[data-page="0"] .organ-card .label{bottom:48px!important;}
+.page[data-page="3"] .compare-card.good .coating{top:62px!important;}
+.page[data-page="10"] .hand-speech{left:150px!important;top:18px!important;width:220px!important;max-width:220px!important;}
+.page[data-page="10"] .hand-speech::after{content:"";position:absolute;left:34px;bottom:-14px;border-width:14px 10px 0 0;border-style:solid;border-color:#17392e transparent transparent transparent;}
+.page[data-page="11"] .brainScene>.speech{position:absolute!important;z-index:60!important;width:220px!important;max-width:220px!important;}
+.page[data-page="11"] .brainScene>.speech:nth-of-type(1){left:8%!important;top:72px!important;}
+.page[data-page="11"] .brainScene>.speech:nth-of-type(2){left:31%!important;top:72px!important;}
+.page[data-page="11"] .brainScene>.speech:nth-of-type(3){right:31%!important;left:auto!important;top:72px!important;}
+.page[data-page="11"] .brainScene>.speech:nth-of-type(4){right:8%!important;left:auto!important;top:72px!important;}
+@media(max-width:600px){
+ .page[data-page="0"] .organ-card .lungsico{transform:translateY(-28px)!important;}
+ .page[data-page="10"] .hand-speech{left:50%!important;top:12px!important;transform:translateX(-50%)!important;width:190px!important;max-width:190px!important;}
+ .page[data-page="11"] .brainScene>.speech:nth-of-type(1){left:3%!important;top:72px!important;width:44%!important;}
+ .page[data-page="11"] .brainScene>.speech:nth-of-type(2){left:auto!important;right:3%!important;top:72px!important;width:44%!important;}
+ .page[data-page="11"] .brainScene>.speech:nth-of-type(3){left:3%!important;right:auto!important;top:165px!important;width:44%!important;}
+ .page[data-page="11"] .brainScene>.speech:nth-of-type(4){right:3%!important;left:auto!important;top:165px!important;width:44%!important;}
+}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" height="0" style="position:absolute" width="0">
+<defs>
+<lineargradient id="lungG" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff9eae"></stop><stop offset="1" stop-color="#e65c7a"></stop></lineargradient>
+<lineargradient id="brainG" x1="0" x2="1"><stop stop-color="#f2a8c4"></stop><stop offset="1" stop-color="#cf6f9c"></stop></lineargradient>
+<lineargradient id="heartG" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff7890"></stop><stop offset="1" stop-color="#d94060"></stop></lineargradient>
+<filter id="shadow"><fedropshadow dx="0" dy="5" flood-opacity=".28" stddeviation="4"></fedropshadow></filter>
+</defs>
+</svg>
+<div class="shell">
+<aside>
+<div class="brand">🫁 jordan's drowning<small>walkthrough from submersion → aspiration → ards → hypoxemia → cardiac arrest/rosc → brain injury → post-arrest care.</small></div>
+
+
+<nav class="nav"><button data-page="0"><span>01</span>meet jordan</button>
+<button data-page="1"><span>02</span>the water wins the argument</button>
+<button data-page="2"><span>03</span>water enters the airway</button>
+<button data-page="3"><span>04</span>surfactant gets disrupted</button>
+<button data-page="4"><span>05</span>atelectasis: some alveoli collapse</button>
+<button data-page="5"><span>06</span>the alveolar-capillary barrier leaks</button>
+<button data-page="6"><span>07</span>pulmonary edema: the lungs flood</button>
+<button data-page="7"><span>08</span>V/Q mismatch + shunt</button>
+<button data-page="8"><span>09</span>severe hypoxemia</button>
+<button data-page="9"><span>10</span>cardiac arrest</button>
+<button data-page="10"><span>11</span>CPR → ROSC</button>
+<button data-page="11"><span>12</span>hypoxic-ischemic brain injury</button>
+<button data-page="12"><span>13</span>post-arrest care: protect the brain</button>
+<button data-page="13"><span>14</span>neuroprognostication is a timeline</button>
+<button data-page="14"><span>15</span>so… what actually happened?</button></nav>
+</aside>
+<main>
+<div class="topline"><div class="badge" id="progress">1 / 15</div><div class="badge">jordan banga</div></div>
+<article class="page active" data-page="0">
+<h1 class="editable" data-edit="title">🫁 jordan's drowning</h1>
+<p class="sub editable" data-edit="sub">walkthrough of jordan’s severe drowning course: submersion → aspiration → ards → hypoxemia → cardiac arrest/rosc → brain injury → post-arrest care.</p>
+<div class="take editable" data-edit="take">📘 dita pasagad ug langoy keds</div>
+<div class="scene"><div class="scene-title">baseline • how jordan’s lungs normally work</div>
+<div class="splitScene">
+<div class="person-card"><div class="mini-label">JORDAN</div><svg class="ico personico" viewbox="0 0 260 430">
+<circle cx="130" cy="65" fill="#ffd2b4" r="48" stroke="#56352d" stroke-width="8"></circle>
+<path d="M84 55c7-55 85-66 99 0-29-20-67-18-99 0z" fill="#26312e"></path>
+<path d="M65 150q65-42 130 0l20 180H45z" fill="#4fd08e" stroke="#234d3e" stroke-width="8"></path>
+<path d="M67 172L8 235M193 172l59 63M91 330l-20 78M169 330l20 78" fill="none" stroke="#ffd2b4" stroke-linecap="round" stroke-width="28"></path>
+</svg><div class="speech">feeling confident today!! let me show these fish kinsay hari ngari</div></div>
+<div class="organ-card"><svg class="ico lungsico" viewbox="0 0 520 430">
+<path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
+<path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
+<path d="M235 123c-76 18-128 87-133 180-3 62 26 91 78 91 47 0 72-28 75-79V173c0-31-6-45-20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M285 123c76 18 128 87 133 180 3 62-26 91-78 91-47 0-72-28-75-79V173c0-31 6-45 20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M176 229c-28 35-32 78-22 107M344 229c28 35 32 78 22 107" fill="none" opacity=".75" stroke="#ffccd6" stroke-width="9"></path>
+<path d="M155 354c27 21 59 25 86 8M365 354c-27 21-59 25-86 8" fill="none" opacity=".7" stroke="#a83f58" stroke-width="7"></path>
+</svg><div class="speech small">“AIR IN. O₂ OUT. easy.”</div><span class="label">healthy air spaces</span></div>
+</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="1">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">una jud: airway.</h1>
+<p class="sub editable" data-edit="sub">drowning is mainly a respiratory problem first. the longer oxygen delivery is interrupted, the higher the risk of injury to the brain and other organs.</p>
+<p class="body editable" data-edit="body">jordan’s underwater for around 3–4 minutes. he isn’t breathing properly, so oxygen isn’t getting into the lungs like it should.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> drowning is mainly a respiratory problem first. the longer oxygen delivery is interrupted, the higher the risk of injury to the brain and other organs.</div>
+<div class="scene"><div class="scene-title">1 • 🌊 submersion</div>
+<div class="waterScene"><div class="sun">☀</div><div class="waveLine w1"></div><div class="waveLine w2"></div>
+<div class="swimmer"><svg class="ico personico" viewbox="0 0 260 430">
+<circle cx="130" cy="65" fill="#ffd2b4" r="48" stroke="#56352d" stroke-width="8"></circle>
+<path d="M84 55c7-55 85-66 99 0-29-20-67-18-99 0z" fill="#26312e"></path>
+<path d="M65 150q65-42 130 0l20 180H45z" fill="#4fd08e" stroke="#234d3e" stroke-width="8"></path>
+<path d="M67 172L8 235M193 172l59 63M91 330l-20 78M169 330l20 78" fill="none" stroke="#ffd2b4" stroke-linecap="round" stroke-width="28"></path>
+</svg></div><div class="waterdrop"><svg class="ico waterico" viewbox="0 0 260 300">
+<path d="M130 22S45 126 45 190c0 51 37 88 85 88s85-37 85-88C215 126 130 22 130 22z" fill="#5cccf1" filter="url(#shadow)" stroke="#174d69" stroke-width="10"></path>
+<path d="M87 190c17-21 49-25 68-8" fill="none" stroke="#dffaff" stroke-linecap="round" stroke-width="10"></path>
+<circle cx="105" cy="160" fill="#19495c" r="8"></circle><circle cx="157" cy="160" fill="#19495c" r="8"></circle>
+</svg></div>
+<div class="speech" style="left:8%;top:18%">jordan: “char ra bitaw hehe”</div><div class="speech" style="right:8%;top:28%">airway: “tuga2 man ged”</div>
+<div class="timeline-pill">submersion → breathing impaired → ↓ o₂ delivery</div></div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="2">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">water enters the respiratory system.</h1>
+<p class="sub editable" data-edit="sub">it’s not just ‘naa’y tubig sa lungs.’ the injury makes it harder for alveoli to stay open and for gases to cross into the blood.</p>
+<p class="body editable" data-edit="body">submersion causes respiratory impairment. aspiration can disrupt surfactant, promote alveolar collapse, and injure the alveolar-capillary interface, worsening gas exchange and contributing to pulmonary edema and ARDS.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> it’s not just ‘naa’y tubig sa lungs.’ the injury makes it harder for alveoli to stay open and for gases to cross into the blood.</div>
+<div class="scene"><div class="scene-title">2 • 💧 aspiration</div>
+<div class="airwayScene"><div class="water-stream"><svg class="ico waterico" viewbox="0 0 260 300">
+<path d="M130 22S45 126 45 190c0 51 37 88 85 88s85-37 85-88C215 126 130 22 130 22z" fill="#5cccf1" filter="url(#shadow)" stroke="#174d69" stroke-width="10"></path>
+<path d="M87 190c17-21 49-25 68-8" fill="none" stroke="#dffaff" stroke-linecap="round" stroke-width="10"></path>
+<circle cx="105" cy="160" fill="#19495c" r="8"></circle><circle cx="157" cy="160" fill="#19495c" r="8"></circle>
+</svg></div><svg class="ico lungsico" viewbox="0 0 520 430">
+<path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
+<path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
+<path d="M235 123c-76 18-128 87-133 180-3 62 26 91 78 91 47 0 72-28 75-79V173c0-31-6-45-20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M285 123c76 18 128 87 133 180 3 62-26 91-78 91-47 0-72-28-75-79V173c0-31 6-45 20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M176 229c-28 35-32 78-22 107M344 229c28 35 32 78 22 107" fill="none" opacity=".75" stroke="#ffccd6" stroke-width="9"></path>
+<path d="M155 354c27 21 59 25 86 8M365 354c-27 21-59 25-86 8" fill="none" opacity=".7" stroke="#a83f58" stroke-width="7"></path>
+</svg>
+<div class="trachea-label">TRACHEA / AIRWAY</div><div class="speech" style="left:5%;top:12%">water: “imong mama”</div><div class="speech" style="right:4%;top:18%">lungs: “kinsay nagpasulod ani”</div>
+<div class="arrow">↓</div><div class="plain-box">aspiration → alveolar injury → gas exchange worsens</div></div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="3">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">the tiny anti-collapse system is getting sabotaged.</h1>
+<p class="sub editable" data-edit="sub">if surfactant gets disrupted, surface tension rises. alveoli can collapse more easily, contributing to atelectasis.</p>
+<p class="body editable" data-edit="body">type ii alveolar cells make surfactant. it lowers surface tension and helps keep alveoli open.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> if surfactant gets disrupted, surface tension rises. alveoli can collapse more easily, contributing to atelectasis.</div>
+<div class="scene"><div class="scene-title">3 • 🧴 surfactant disruption</div>
+<div class="compare">
+<div class="compare-card good"><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#f07f99" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+</svg><div class="coating"></div><h3>before injury</h3><p>open + easier to keep open</p></div>
+<div class="compare-card bad"><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#f07f99" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+<path d="M205 135c8 12 8 23 0 31-8-8-8-19 0-31z" fill="#74d9f4" stroke="#174d69" stroke-width="3"></path>
+</svg><div class="droplets">💧 💧</div><h3>after injury</h3><p>surface tension becomes a problem</p></div>
+</div>
+<div class="speech" style="left:8%;bottom:7%">surfactant: “ako ra’y ga-carry ani nga team oy”</div><div class="speech" style="right:8%;bottom:7%">surface tension: “bantay bitaw ha, 0–5 na baya ta ron”</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="4">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">some alveoli said ‘di na ko apil.’</h1>
+<p class="sub editable" data-edit="sub">blood can still flow past poorly ventilated alveoli. that sets up v/q mismatch and shunt.</p>
+<p class="body editable" data-edit="body">atelectasis means partial or complete collapse of alveoli or lung tissue. fewer open air spaces means less surface area for gas exchange.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> blood can still flow past poorly ventilated alveoli. that sets up v/q mismatch and shunt.</div>
+<div class="scene"><div class="scene-title">4 • 🫁 atelectasis</div>
+<div class="compare">
+<div class="compare-card good"><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#f07f99" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+</svg><h3>OPEN</h3><p>air can reach the space.</p></div>
+<div class="compare-card bad"><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#c95f7c" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+</svg><h3>COLLAPSED</h3><p>much less usable ventilation.</p></div>
+</div>
+<div class="speech" style="left:8%;bottom:7%">open: “naa pay hangin diri”</div><div class="speech" style="right:8%;bottom:7%">collapsed: “ou, guro”</div><div class="big-caption">think: <b>tiny air rooms</b> losing their air.</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="5">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">the alveolar-capillary barrier starts leaking.</h1>
+<p class="sub editable" data-edit="sub">that fluid interferes with ventilation and surfactant. this contributes to pulmonary edema and worse oxygenation.</p>
+<p class="body editable" data-edit="body">the alveolar-capillary barrier is normally very thin so o₂ can cross into the blood. injury increases permeability, so fluid and proteins leak into the interstitium and alveolar spaces.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> that fluid interferes with ventilation and surfactant. this contributes to pulmonary edema and worse oxygenation.</div>
+<div class="scene"><div class="scene-title">5 • 🩸 barrier injury</div>
+<div class="barrierScene">
+<div class="side"><div class="sideTitle">ALVEOLUS</div><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#f07f99" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+</svg><span>air / O₂</span></div>
+<div class="wallIcon"><div class="wall">BARRIER</div><div class="leakDots">•<br/>•<br/>•</div></div>
+<div class="side"><div class="sideTitle">CAPILLARY</div><svg class="ico capico" viewbox="0 0 420 240">
+<path d="M25 120C80 20 130 220 185 120S290 20 345 120s45 100 50 100" fill="none" stroke="#d9495f" stroke-linecap="round" stroke-width="48"></path>
+<path d="M25 120C80 20 130 220 185 120S290 20 345 120s45 100 50 100" fill="none" stroke="#ff8998" stroke-linecap="round" stroke-width="32"></path>
+<circle cx="92" cy="86" fill="#a92542" r="14"></circle><circle cx="192" cy="151" fill="#a92542" r="14"></circle><circle cx="295" cy="88" fill="#a92542" r="14"></circle>
+</svg><span>blood</span></div>
+</div>
+<div class="speech" style="left:8%;bottom:6%">barrier: “selective ko, sorry”</div><div class="speech" style="right:8%;bottom:6%">injury: “mao ba”</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="6">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">the air spaces are now getting flooded. nice.</h1>
+<p class="sub editable" data-edit="sub">now o₂ has a harder time reaching the blood, and the extra fluid can further disrupt surfactant and ventilation.</p>
+<p class="body editable" data-edit="body">with increased permeability, fluid builds up in and around the alveoli. this is non-cardiogenic pulmonary edema.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> now o₂ has a harder time reaching the blood, and the extra fluid can further disrupt surfactant and ventilation.</div>
+<div class="scene"><div class="scene-title">6 • 💦 pulmonary edema</div>
+<div class="edemaScene"><div class="lungs-half"><svg class="ico lungsico" viewbox="0 0 520 430">
+<path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
+<path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
+<path d="M235 123c-76 18-128 87-133 180-3 62 26 91 78 91 47 0 72-28 75-79V173c0-31-6-45-20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M285 123c76 18 128 87 133 180 3 62-26 91-78 91-47 0-72-28-75-79V173c0-31 6-45 20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M176 229c-28 35-32 78-22 107M344 229c28 35 32 78 22 107" fill="none" opacity=".75" stroke="#ffccd6" stroke-width="9"></path>
+<path d="M155 354c27 21 59 25 86 8M365 354c-27 21-59 25-86 8" fill="none" opacity=".7" stroke="#a83f58" stroke-width="7"></path>
+</svg></div><div class="fluid-pool"><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#72cde4" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<path d="M82 174c44 23 92 23 136 0" fill="none" opacity=".9" stroke="#58cbe4" stroke-linecap="round" stroke-width="24"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+</svg></div>
+<div class="secretions">pink frothy<br/>secretions</div><div class="speech" style="left:5%;top:13%">alveolus: “kinsay nagpasulod ani”<br/>edema fluid: “nakalusot ko, buot ka?”</div><div class="speech" style="right:5%;top:22%">alveolus: “ay”</div></div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="7">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">ventilation and perfusion have officially lost contact.</h1>
+<p class="sub editable" data-edit="sub">a true intrapulmonary shunt is blood flow through lung regions with little or no effective ventilation. this helps explain why severe hypoxemia can persist even with high fio₂.</p>
+<p class="body editable" data-edit="body">some alveoli get very little air while blood keeps flowing through them. that blood leaves the lungs poorly oxygenated.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> a true intrapulmonary shunt is blood flow through lung regions with little or no effective ventilation. this helps explain why severe hypoxemia can persist even with high fio₂.</div>
+<div class="scene"><div class="scene-title">7 • 🔀 V/Q mismatch + shunt</div>
+<div class="shuntScene">
+<div class="lung-zone"><svg class="ico alveolusico" viewbox="0 0 300 250">
+<path d="M150 36c-45-26-99 9-94 58-40 25-27 89 22 96 19 48 84 49 105 7 44 11 81-25 67-67 34-43-4-99-48-91-10-38-32-54-52-3z" fill="#f07f99" filter="url(#shadow)" stroke="#632c3b" stroke-width="9"></path>
+<path d="M93 106c19-21 40-22 57-7 17-15 38-14 57 7" fill="none" stroke="#ffccd6" stroke-linecap="round" stroke-width="9"></path>
+<circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
+<path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
+</svg><div class="zoneTag">AIR-POOR</div></div>
+<div class="cap-zone"><svg class="ico capico" viewbox="0 0 420 240">
+<path d="M25 120C80 20 130 220 185 120S290 20 345 120s45 100 50 100" fill="none" stroke="#d9495f" stroke-linecap="round" stroke-width="48"></path>
+<path d="M25 120C80 20 130 220 185 120S290 20 345 120s45 100 50 100" fill="none" stroke="#ff8998" stroke-linecap="round" stroke-width="32"></path>
+<circle cx="92" cy="86" fill="#a92542" r="14"></circle><circle cx="192" cy="151" fill="#a92542" r="14"></circle><circle cx="295" cy="88" fill="#a92542" r="14"></circle>
+</svg><div class="zoneTag">BLOOD KEEPS FLOWING</div></div>
+<div class="bloodCell b1"></div><div class="bloodCell b2"></div><div class="bloodCell b3"></div>
+<div class="shuntArrow">BLOOD → → →</div>
+</div>
+<div class="big-caption"><b>shunt:</b> blood keeps flowing, but the alveoli aren't getting enough air.</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="8">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">now the numbers are getting suspicious.</h1>
+<p class="sub editable" data-edit="sub">the ABG shows severe hypoxemia, inadequate ventilation, and a mixed respiratory and metabolic acid-base disturbance.</p>
+<p class="body editable" data-edit="body">ABG: pH 7.11, PaCO₂ 58 mmHg, HCO₃⁻ 16 mEq/L, PaO₂ 50 mmHg, SpO₂ 84%, despite FiO₂ 100%.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> PaO₂ 50 and SpO₂ 84% mean there isn't enough oxygen in the blood. PaCO₂ 58 means ventilation isn't clearing CO₂ well enough. The low pH, low HCO₃⁻, and high CO₂ show both respiratory and metabolic acidosis.</div>
+<div class="scene"><div class="scene-title">8 • 🫁 severe hypoxemia</div>
+<div class="dashboard">
+<div class="abgCard"><div class="abgTitle">ABG</div><div><b>pH</b><strong>7.11</strong></div><div><b>PaCO₂</b><strong>58</strong><small>mmHg</small></div><div class="danger"><b>PaO₂</b><strong>50</strong><small>mmHg</small></div><div><b>HCO₃⁻</b><strong>16</strong><small>mEq/L</small></div></div>
+<div class="oxygenCard"><div class="o2bubble">FiO₂ 100%</div><strong>↓ PaO₂ 50 mmHg<br/>↓ SpO₂ 84%</strong><span>severe hypoxemia</span></div>
+<div class="mini-lung"><svg class="ico lungsico" viewbox="0 0 520 430">
+<path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
+<path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
+<path d="M235 123c-76 18-128 87-133 180-3 62 26 91 78 91 47 0 72-28 75-79V173c0-31-6-45-20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M285 123c76 18 128 87 133 180 3 62-26 91-78 91-47 0-72-28-75-79V173c0-31 6-45 20-50z" fill="url(#lungG)" filter="url(#shadow)" stroke="#632b3b" stroke-width="9"></path>
+<path d="M176 229c-28 35-32 78-22 107M344 229c28 35 32 78 22 107" fill="none" opacity=".75" stroke="#ffccd6" stroke-width="9"></path>
+<path d="M155 354c27 21 59 25 86 8M365 354c-27 21-59 25-86 8" fill="none" opacity=".7" stroke="#a83f58" stroke-width="7"></path>
+</svg></div>
+</div>
+<div class="speech" style="left:8%;bottom:5%">FiO₂: “binigay ko na sayo lahat2!!! pati 100% oxygen ko!”</div><div class="speech" style="right:8%;bottom:5%">lungs: “awwe aha ko man ni ibutang, yah?”</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="9">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">the whole-body oxygen crisis reaches the heart.</h1>
+<p class="sub editable" data-edit="sub">rosc restores circulation, but the cells still have to deal with what happened during the oxygen crisis. after cardiac arrest, the goal is to prevent secondary injury and protect the organs.</p>
+<p class="body editable" data-edit="body">jordan was initially apneic and pulseless. pre-hospital providers achieved rosc — return of spontaneous circulation — en route following continuous chest compressions, BVM ventilation, and endotracheal intubation. because the resort was 10 km from the nearest acute care facility, EMS response and transport took approximately 20 minutes. during that time, priorities were effective ventilation and oxygenation, high-quality CPR, circulation support, and minimizing further hypoxic injury.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> rosc restores circulation, but the cells still have to deal with what happened during the oxygen crisis. after cardiac arrest, the goal is to prevent secondary injury and protect the organs.</div>
+<div class="scene"><div class="scene-title">9 • ❤️ cardiac arrest → rosc</div>
+<div class="arrestScene"><div class="heartWrap"><svg class="ico heartico" viewbox="0 0 360 320">
+<path d="M180 286S35 202 35 105C35 47 107 25 145 70l35 42 35-42c38-45 110-23 110 35 0 97-145 181-145 181z" fill="url(#heartG)" filter="url(#shadow)" stroke="#642535" stroke-width="10"></path>
+<path d="M180 112v82M139 153h82" stroke="#ffb6c2" stroke-linecap="round" stroke-width="9"></path>
+</svg></div><div class="monitorWrap"><svg class="ico monitorico" viewbox="0 0 430 300">
+<rect fill="#13211f" height="215" rx="24" stroke="#91b4a9" stroke-width="10" width="370" x="30" y="25"></rect>
+<path d="M55 150h70l20-60 25 118 25-78 20 20h130" fill="none" stroke="#ff5d73" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
+<rect fill="#91b4a9" height="20" rx="10" width="120" x="155" y="245"></rect>
+</svg></div>
+<div class="speech" style="left:6%;top:15%">heart: “log out sako bai, 30 seconds nalay bilin”</div><div class="speech" style="right:5%;top:18%">cpr: “balik diri bai, ayaw sa”</div>
+<div class="alert">PULSELESS</div></div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="10">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">the brain is not having a good day.</h1>
+<p class="sub editable" data-edit="sub">the brain needs a lot of oxygen and has little tolerance for prolonged oxygen deprivation. cerebral edema can further affect brain function and intracranial physiology.</p>
+<p class="body editable" data-edit="body">head ct shows diffuse cerebral edema with loss of gray-white matter differentiation, concerning for hypoxic-ischemic brain injury.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> the brain needs a lot of oxygen and has little tolerance for prolonged oxygen deprivation. cerebral edema can further affect brain function and intracranial physiology.</div>
+<div class="scene"><div class="scene-title">10 • 🧠 hypoxic-ischemic brain injury</div>
+<div class="roscScene"><div class="cprVisual"><div class="cprHands">🤲</div><div class="speech hand-speech">i’m supposed to go down btw</div><svg class="ico heartico" viewbox="0 0 360 320">
+<path d="M180 286S35 202 35 105C35 47 107 25 145 70l35 42 35-42c38-45 110-23 110 35 0 97-145 181-145 181z" fill="url(#heartG)" filter="url(#shadow)" stroke="#642535" stroke-width="10"></path>
+<path d="M180 112v82M139 153h82" stroke="#ffb6c2" stroke-linecap="round" stroke-width="9"></path>
+</svg></div><div class="monitorWrap"><svg class="ico monitorico" viewbox="0 0 430 300">
+<rect fill="#13211f" height="215" rx="24" stroke="#91b4a9" stroke-width="10" width="370" x="30" y="25"></rect>
+<path d="M55 150h70l20-60 25 118 25-78 20 20h130" fill="none" stroke="#5ff0b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
+<rect fill="#91b4a9" height="20" rx="10" width="120" x="155" y="245"></rect>
+</svg></div>
+<div class="roscbadge">ROSC</div><div class="speech" style="left:5%;top:14%">brain: “where my oxygen homies at?”</div><div class="speech" style="right:5%;top:17%">O₂: “gg freakin ez”</div><div class="brainTags"><span>HYPOXIC<br/>↓ O₂</span><span>ISCHEMIC<br/>↓ FLOW</span></div>
+<div class="note">ROSC = return of spontaneous circulation.</div></div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="11">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">34.1°c changes the question.</h1>
+<p class="sub editable" data-edit="sub">jordan is 17 and remains comatose after rosc, so pediatric post-arrest guidance applies. 2025 AHA/AAP guidance recommends continuous central temperature monitoring and avoiding temperatures above 37.5°c. for children 24 hours to 18 years who remain comatose after cardiac arrest, it is reasonable to use a 5-day course of TTM: either 32–34°c followed by 36–37.5°c, or 36–37.5°c alone.</p>
+<p class="body editable" data-edit="body">jordan’s core temperature is 34.1°c after rosc. the goal is deliberate temperature control rather than automatically forcing the temperature to exactly 33°c or rapidly warming to normal. the chosen target and duration should follow pediatric post-arrest protocols while preventing fever.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> jordan is 17, so pediatric post-arrest guidance applies: monitor core temperature continuously, avoid temperatures above 37.5°c, and use a deliberate TTM strategy rather than assuming that exactly 33°c is required.</div>
+<div class="scene"><div class="scene-title">11 • 🌡️ post-arrest temperature management</div>
+<div class="brainScene"><div class="brainWrap"><svg class="ico brainico" viewbox="0 0 420 300">
+<path d="M205 254c-72 7-138-31-145-102-6-63 39-112 91-108 21-44 89-43 113-5 54-15 104 24 101 77 34 37 13 100-32 119-30 12-73 20-128 19z" fill="url(#brainG)" filter="url(#shadow)" stroke="#632c4a" stroke-width="10"></path>
+<path d="M145 65c28 26-7 40 25 59s-18 36 15 57M224 42c-18 30 28 43-4 69s23 38-7 65M303 70c-30 21 8 46-24 67s17 39-16 62" fill="none" stroke="#a84e7c" stroke-linecap="round" stroke-width="12"></path>
+<path d="M204 75v160" opacity=".6" stroke="#f8d1df" stroke-width="6"></path>
+</svg></div><div class="ctIcon">CT</div>
+<div class="speech">thermometer: “34.1°c ko”</div><div class="speech">gojo: “it should be 33 bru”</div><div class="speech">thermometer: “source?”</div><div class="speech">gojo: “wala kay salig nako?”</div>
+</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="12">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">cover judge by its test! ha? ou</h1>
+<p class="sub editable" data-edit="sub">the exam checks pupils, corneal reflexes, motor responses, and command following while accounting for sedation and other confounders. eeg checks seizures and brain activity patterns. ssep may add prognostic information, but pediatric evidence is limited. ct and mri can show patterns of hypoxic-ischemic injury. no single test should be used alone.</p>
+<p class="body editable" data-edit="body">over the first 24–72 hours and beyond, clinicians use serial neurologic exams, eeg, and neuroimaging, with ssep considered as part of a multimodal assessment. timing and confounders such as sedation, temperature, metabolic abnormalities, and seizures matter. pediatric guidance emphasizes using multiple tests rather than relying on one electrophysiological result.</p>
+<div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> the exam checks pupils, corneal reflexes, motor responses, and command following. eeg checks seizures and brain activity patterns. ssep can add prognostic information. ct and mri can show patterns of hypoxic-ischemic injury. no single test should be used alone.</div>
+<div class="scene"><div class="scene-title">12 • 🧠 neurological prognostication</div>
+<div class="careGrid">
+<div class="careItem"><svg class="ico ambulance" viewbox="0 0 500 270">
+<path d="M30 90h300V55h70l65 75v75H30z" fill="#f7fbf9" filter="url(#shadow)" stroke="#28483e" stroke-width="9"></path>
+<path d="M330 90h55l55 65H330z" fill="#9bdff1" stroke="#28483e" stroke-width="8"></path>
+<rect fill="#e34e68" height="25" rx="12" width="115" x="105" y="110"></rect><rect fill="#e34e68" height="115" rx="12" width="25" x="150" y="65"></rect>
+<circle cx="115" cy="235" fill="#25332f" r="28"></circle><circle cx="390" cy="235" fill="#25332f" r="28"></circle>
+</svg><b>OXYGENATION<br/>&amp; VENTILATION</b></div>
+<div class="careItem"><svg class="ico heartico" viewbox="0 0 360 320">
+<path d="M180 286S35 202 35 105C35 47 107 25 145 70l35 42 35-42c38-45 110-23 110 35 0 97-145 181-145 181z" fill="url(#heartG)" filter="url(#shadow)" stroke="#642535" stroke-width="10"></path>
+<path d="M180 112v82M139 153h82" stroke="#ffb6c2" stroke-linecap="round" stroke-width="9"></path>
+</svg><b>PERFUSION<br/>&amp; BLOOD PRESSURE</b></div>
+<div class="careItem"><div class="thermo">🌡</div><b>TEMPERATURE<br/>MANAGEMENT</b></div>
+<div class="careItem"><svg class="ico monitorico" viewbox="0 0 430 300">
+<rect fill="#13211f" height="215" rx="24" stroke="#91b4a9" stroke-width="10" width="370" x="30" y="25"></rect>
+<path d="M55 150h70l20-60 25 118 25-78 20 20h130" fill="none" stroke="#5ff0b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
+<rect fill="#91b4a9" height="20" rx="10" width="120" x="155" y="245"></rect>
+</svg><b>EEG /<br/>SEIZURE EVALUATION</b></div>
+<div class="careItem"><svg class="ico brainico" viewbox="0 0 420 300">
+<path d="M205 254c-72 7-138-31-145-102-6-63 39-112 91-108 21-44 89-43 113-5 54-15 104 24 101 77 34 37 13 100-32 119-30 12-73 20-128 19z" fill="url(#brainG)" filter="url(#shadow)" stroke="#632c4a" stroke-width="10"></path>
+<path d="M145 65c28 26-7 40 25 59s-18 36 15 57M224 42c-18 30 28 43-4 69s23 38-7 65M303 70c-30 21 8 46-24 67s17 39-16 62" fill="none" stroke="#a84e7c" stroke-linecap="round" stroke-width="12"></path>
+<path d="M204 75v160" opacity=".6" stroke="#f8d1df" stroke-width="6"></path>
+</svg><b>NEUROLOGIC<br/>EXAM</b></div>
+<div class="careItem"><div class="ctIcon big">CT</div><b>CT / MRI<br/>WHEN INDICATED</b></div>
+</div></div>
+<div class="speech" style="right:6%;bottom:5%">kuwang pa ni ug usa ka test para makaconclude, dai<br/>nge hangol</div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="13">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">neuroprognostication is a timeline</h1>
+<p class="sub editable" data-edit="sub">do not turn one early finding into a final answer.</p>
+<p class="body editable" data-edit="body">over the first 24–72 hours and beyond, clinicians may use serial clinical examinations, EEG, SSEP, CT/MRI trends, and other tests as appropriate. confounders and timing matter.</p>
+<div class="take editable" data-edit="take"><b>🧠 Plain-English takeaway:</b> Think MULTIMODAL + TIME. one early exam, scan, or test should not be treated as the whole story.</div>
+<div class="scene"><div class="scene-title">13 • neuroprognostication: use multiple pieces + the right timing</div>
+<div class="timeline">
+<div class="timebox"><strong>0–24 h</strong><span>stabilize + serial exam</span></div><div class="line"></div>
+<div class="timebox"><strong>24–72 h</strong><span>EEG / SSEP / imaging trends as appropriate</span></div><div class="line"></div>
+<div class="timebox"><strong>later</strong><span>multimodal interpretation with confounders considered</span></div>
+</div>
+<div class="testIcons"><div><svg class="ico monitorico" viewbox="0 0 430 300">
+<rect fill="#13211f" height="215" rx="24" stroke="#91b4a9" stroke-width="10" width="370" x="30" y="25"></rect>
+<path d="M55 150h70l20-60 25 118 25-78 20 20h130" fill="none" stroke="#5ff0b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
+<rect fill="#91b4a9" height="20" rx="10" width="120" x="155" y="245"></rect>
+</svg><b>EEG</b></div><div><div class="ssep">SSEP</div><b>SSEP</b></div><div><div class="ctIcon big">CT</div><b>CT/MRI</b></div></div>
+<div class="big-caption"><b>one test result ≠ final answer, talking stage pa gani.</b></div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
+</article>
+<article class="page" data-page="14">
+<div class="eyebrow editable" data-edit="eyebrow"></div>
+<h1 class="editable" data-edit="title">so… what actually happened?</h1>
+<p class="sub editable" data-edit="sub">the whole case in one visual chain.</p>
+<p class="body editable" data-edit="body">jordan’s drowning caused severe hypoxic injury with major lung dysfunction. the lungs became poor at oxygenating blood, hypoxemia became profound, cardiac arrest occurred, ROSC followed, and now post-arrest care focuses on limiting further injury and assessing recovery over time.</p>
+<div class="take editable" data-edit="take"><b>🧠 Plain-English takeaway:</b> if you can explain what happened to jordan without the big words, you da goat.</div>
+<div class="scene"><div class="scene-title">14 • the entire case, one chain</div><div class="finalChain"><div><span>1</span>SUBMERSION</div><div><span>2</span>ASPIRATION</div><div><span>3</span>SURFACTANT DISRUPTION</div><div><span>4</span>ATELECTASIS</div><div><span>5</span>BARRIER INJURY</div><div><span>6</span>FLUID LEAKAGE</div><div><span>7</span>PULMONARY EDEMA</div><div><span>8</span>V/Q MISMATCH + SHUNT</div><div><span>9</span>SEVERE HYPOXEMIA</div><div><span>10</span>CARDIAC ARREST</div><div><span>11</span>HYPOXIC-ISCHEMIC BRAIN INJURY</div><div><span>12</span>ROSC</div><div><span>13</span>POST-ARREST CARE</div></div><div class="finalPunch">“aspiration injured the lungs → impaired oxygenation led to severe hypoxemia → cardiac arrest occurred → hypoxic-ischemic brain injury developed → post-arrest care focuses on protecting the brain and assessing neurological function.”</div></div>
+<div class="bottomNav"><button class="pageBtn prev">← Previous</button></div>
+</article>
+<div class="footer">“the humor is here to make the mechanisms stick in your head — not to make the emergency itself a joke.”</div>
+</main>
+</div>
+
+
+<script>
+  const pages=[...document.querySelectorAll('.page')];
+const nav=[...document.querySelectorAll('.nav button')];
+let current=0;
+function show(n,scroll=true){
+ n=Math.max(0,Math.min(pages.length-1,n)); current=n;
+ pages.forEach((p,i)=>p.classList.toggle('active',i===n));
+ nav.forEach((b,i)=>b.classList.toggle('active',i===n));
+ document.getElementById('progress').textContent=`${n+1} / ${pages.length}`;
+
+ if(scroll) window.scrollTo({top:0,behavior:'smooth'});
+}
+nav.forEach(b=>b.addEventListener('click',()=>show(+b.dataset.page)));
+document.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(current-1)));
+document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(current+1)));
+
+</script>
+<script>
+(function cleanSpeechAndLayout(){
+  const scenes=document.querySelectorAll('.scene');
+  scenes.forEach(scene=>{
+    const bubbles=[...scene.children].filter(el=>el.classList && el.classList.contains('speech'));
+    bubbles.forEach((el,i)=>{
+      el.classList.remove('clean-left','clean-right','clean-bottom');
+      el.classList.add(i%2===0?'clean-left':'clean-right');
+      // For pairs intended as lower commentary, keep them above the bottom navigation area.
+      const bottomPair = el.style.bottom && !el.style.top;
+      if(bottomPair) el.classList.add('clean-bottom');
+      el.style.zIndex='60';
+    });
+  });
+})();
+</script>
+<script>
+(function arrangeJordanSpeechV2(){
+  const q=(sel,root=document)=>root.querySelector(sel);
+  const qa=(sel,root=document)=>[...root.querySelectorAll(sel)];
+  const page=i=>q('.page[data-page="'+i+'"]');
+  // Page 04: place each bubble inside its matching before/after card.
+  let p=page(3); if(p){ const b=qa('.scene>.speech',p), cards=qa('.compare-card',p); b.forEach((el,i)=>{ if(cards[i]) cards[i].appendChild(el); }); }
+  // Page 06: place Barrier and Fluid bubbles inside the two side boxes.
+  p=page(5); if(p){ const b=qa('.scene>.speech',p), sides=qa('.barrierScene>.side',p); b.forEach((el,i)=>{ if(sides[i]) sides[i].appendChild(el); }); }
+  // Page 09: place O2/Lung bubbles in their corresponding dashboard cards.
+  p=page(8); if(p){ const b=qa('.scene>.speech',p), cards=qa('.dashboard>div',p); if(b[0]&&cards[1]) cards[1].appendChild(b[0]); if(b[1]&&cards[2]) cards[2].appendChild(b[1]); }
+  // Page 10: Heart bubble belongs to heart; Monitor bubble belongs to monitor.
+  p=page(9); if(p){ const b=qa('.arrestScene>.speech',p); const h=q('.heartWrap',p), m=q('.monitorWrap',p); if(b[0]&&h) h.appendChild(b[0]); if(b[1]&&m) m.appendChild(b[1]); }
+  // Page 11: CPR bubble belongs to CPR visual; returned-heart bubble belongs to monitor side.
+  p=page(10); if(p){ const b=qa('.roscScene>.speech',p); const c=q('.cprVisual',p), m=q('.monitorWrap',p); if(b[0]&&c) c.appendChild(b[0]); if(b[1]&&m) m.appendChild(b[1]); }
+  // Page 12: brain bubble belongs to brain; CT bubble belongs to CT.
+  p=page(11); if(p){ const b=qa('.brainScene>.speech',p); const brain=q('.brainWrap',p), ct=q('.ctIcon',p); if(b.length===2){ if(b[0]&&brain) brain.appendChild(b[0]); if(b[1]&&ct) ct.appendChild(b[1]); } }
+
+  // All bubbles use centered text and no legacy inline offsets.
+  qa('.speech').forEach(el=>{
+    el.style.left=''; el.style.right=''; el.style.top=''; el.style.bottom=''; el.style.transform='';
+    el.style.margin='0'; el.style.textAlign='center'; el.style.boxSizing='border-box';
+  });
+  // Page 02: keep both bubbles clear of the sun/swimmer.
+  p=page(1); if(p){ const b=qa('.waterScene>.speech',p); if(b[0]){b[0].style.left='8%';b[0].style.top='116px';b[0].style.right='auto';b[0].style.width='240px';} if(b[1]){b[1].style.right='48px';b[1].style.top='160px';b[1].style.left='auto';b[1].style.width='250px';} }
+  // Page 03: speech is a top row, lungs are centered below.
+  p=page(2); if(p){ const b=qa('.airwayScene>.speech',p); if(b[0]){b[0].style.left='8%';b[0].style.top='180px';b[0].style.right='auto';b[0].style.width='230px';} if(b[1]){b[1].style.right='48px';b[1].style.top='180px';b[1].style.left='auto';b[1].style.width='280px';} }
+  // Page 07: bubbles stay high while the lung and frothy secretions sit lower.
+  p=page(6); if(p){ const b=qa('.edemaScene>.speech',p); if(b[0]){b[0].style.left='5%';b[0].style.top='78px';b[0].style.right='auto';} if(b[1]){b[1].style.right='5%';b[1].style.top='78px';b[1].style.left='auto';} }
+
+  // Page 04 card bubbles: sit at the bottom of each card, with room for the alveolus icon and label.
+  p=page(3); if(p) qa('.compare-card>.speech',p).forEach(el=>{el.style.position='absolute';el.style.left='10px';el.style.right='10px';el.style.bottom='12px';el.style.width='auto';el.style.maxWidth='none';});
+  // Page 06 side bubbles: centered in the lower-middle of their own box without covering the bottom labels.
+  p=page(5); if(p) qa('.side>.speech',p).forEach(el=>{el.style.position='absolute';el.style.left='10px';el.style.right='10px';el.style.bottom='52px';el.style.width='auto';el.style.maxWidth='none';});
+  // Page 09 bubbles: centered in the relevant cards.
+  p=page(8); if(p){ const b=qa('.dashboard .speech',p); if(b[0]){b[0].style.position='absolute';b[0].style.left='10px';b[0].style.right='10px';b[0].style.bottom='12px';b[0].style.maxWidth='none';} if(b[1]){b[1].style.position='absolute';b[1].style.left='10px';b[1].style.right='10px';b[1].style.bottom='12px';b[1].style.maxWidth='none';} }
+  // Pages 10–12: bubble is anchored to the corresponding visual and centered.
+  p=page(9); if(p) qa('.heartWrap>.speech,.monitorWrap>.speech',p).forEach(el=>{el.style.position='absolute';el.style.left='50%';el.style.right='auto';el.style.transform='translateX(-50%)';el.style.top='-52px';el.style.bottom='auto';el.style.width='min(260px,80vw)';el.style.maxWidth='260px';});
+  p=page(10); if(p) qa('.cprVisual>.speech,.monitorWrap>.speech',p).forEach(el=>{el.style.position='absolute';el.style.left='50%';el.style.right='auto';el.style.transform='translateX(-50%)';el.style.top='-54px';el.style.bottom='auto';el.style.width='min(260px,80vw)';el.style.maxWidth='260px';});
+  p=page(11); if(p){ const a=q('.brainWrap>.speech',p), b=q('.ctIcon>.speech',p); if(a){a.style.position='absolute';a.style.left='50%';a.style.transform='translateX(-50%)';a.style.top='-58px';a.style.width='260px';a.style.maxWidth='260px';} if(b){b.style.position='absolute';b.style.left='50%';b.style.transform='translateX(-50%)';b.style.top='-62px';b.style.width='320px';b.style.maxWidth='320px';} }
+
+  // Make the final page footer flow naturally below the chain.
+  p=page(14); if(p){const f=q('.finalPunch',p); if(f){f.style.position='relative';f.style.left='auto';f.style.right='auto';f.style.top='auto';f.style.bottom='auto';f.style.transform='none';}}
+})();
+
+</script>
+<script>
+(function applyFinalSpeechOverrides(){
+  const page=i=>document.querySelector('.page[data-page="'+i+'"]');
+  let p=page(0), b=p&&[...p.querySelectorAll('.person-card>.speech')];
+  if(b?.[0]){b[0].style.setProperty('bottom','0px','important');}
+  p=page(1); b=p&&[...p.querySelectorAll('.waterScene>.speech')];
+  if(b?.[0]){b[0].style.setProperty('left','8%','important');b[0].style.setProperty('right','auto','important');b[0].style.setProperty('top','116px','important');}
+  if(b?.[1]){b[1].style.setProperty('left','auto','important');b[1].style.setProperty('right','48px','important');b[1].style.setProperty('top','160px','important');}
+  p=page(2); b=p&&[...p.querySelectorAll('.airwayScene>.speech')];
+  if(b?.[0]){b[0].style.setProperty('left','5%','important');b[0].style.setProperty('right','auto','important');b[0].style.setProperty('top','122px','important');}
+  if(b?.[1]){b[1].style.setProperty('left','auto','important');b[1].style.setProperty('right','5%','important');b[1].style.setProperty('top','122px','important');}
+  p=page(3); const coating=p?.querySelector('.compare-card.good .coating');
+  if(coating) coating.style.setProperty('top','62px','important');
+  p=page(5);
+  const leftAlveolus=p?.querySelector('.barrierScene>.side:first-child .alveolusico');
+  const airLabel=p?.querySelector('.barrierScene>.side:first-child span');
+  const cap=p?.querySelector('.barrierScene>.side:nth-child(3) .capico');
+  const leftSpeech=p?.querySelector('.barrierScene>.side:first-child>.speech');
+  const rightSpeech=p?.querySelector('.barrierScene>.side:nth-child(3)>.speech');
+  [leftAlveolus,airLabel].forEach(el=>el?.style.setProperty('transform','translateY(-24px)','important'));
+  cap?.style.setProperty('transform','translateY(-30px)','important');
+  [leftSpeech,rightSpeech].forEach(el=>el?.style.setProperty('bottom','18px','important'));
+  p=page(8); b=p&&[...p.querySelectorAll('.dashboard .speech')];
+  b?.forEach(el=>el.style.setProperty('bottom','0px','important'));
+  p=page(9); b=p&&[...p.querySelectorAll('.heartWrap>.speech,.monitorWrap>.speech')];
+  b?.forEach(el=>el.style.setProperty('top','-70px','important'));
+  p=page(10); b=p&&[...p.querySelectorAll('.cprVisual>.speech,.monitorWrap>.speech')];
+  b?.forEach(el=>el.style.setProperty('top','-72px','important'));
+})();
+</script>
+<script>
+(function applyLatestVisualAdjustments(){
+  const page=i=>document.querySelector('.page[data-page="'+i+'"]');
+  const set=(el,prop,value,important=true)=>el?.style.setProperty(prop,value,important?'important':'');
+  const all=(root,selector)=>root?[...root.querySelectorAll(selector)]:[];
+
+  // Page 1: give the swimmer bubble a wider, shallower shape and lift the organ artwork.
+  let p=page(0);
+  set(p?.querySelector('.person-card>.speech'),'width','260px');
+  set(p?.querySelector('.person-card>.speech'),'min-width','260px');
+  set(p?.querySelector('.person-card>.speech'),'padding','8px 13px');
+  set(p?.querySelector('.organ-card>.lungsico'),'transform','translateY(-18px)');
+  set(p?.querySelector('.organ-card>.label'),'bottom','48px');
+
+  // Page 2: keep the speech and drop visually connected without crowding the scene.
+  p=page(1);
+  const waterSpeech=all(p,'.waterScene>.speech');
+  if(waterSpeech[0]){
+    set(waterSpeech[0],'left','6%'); set(waterSpeech[0],'top','100px');
+  }
+  set(p?.querySelector('.waterdrop'),'right','21%');
+
+  // Page 3: move the airway stream right, and raise the lungs as a group.
+  p=page(2);
+  set(p?.querySelector('.water-stream'),'left','25%');
+  set(p?.querySelector('.airwayScene>.lungsico'),'top','108px');
+
+  // Page 4: preserve the guide's position while giving it the intended height.
+  p=page(3);
+  const coating=p?.querySelector('.compare-card.good .coating');
+  set(coating,'top','62px'); set(coating,'bottom','54px');
+  set(coating,'height','220px');
+  set(p?.querySelector('.big-caption'),'bottom','38px');
+
+  // Page 6: lift the blood label while keeping the two side compositions intact.
+  p=page(5);
+  set(p?.querySelector('.barrierScene>.side:nth-child(3)>span'),'transform','translateY(-18px)');
+
+  // Page 7: lower both bubbles, with Fluid deliberately below the alveoli bubble.
+  p=page(6);
+  const edemaSpeech=all(p,'.edemaScene>.speech');
+  if(edemaSpeech[0]){set(edemaSpeech[0],'top','116px');set(edemaSpeech[0],'bottom','auto');}
+  if(edemaSpeech[1]){set(edemaSpeech[1],'top','154px');set(edemaSpeech[1],'bottom','auto');}
+
+  // Page 9: raise both card bubbles by the same amount and preserve alignment.
+  p=page(8);
+  all(p,'.dashboard .speech').forEach(el=>{
+    set(el,'bottom','14px'); set(el,'left','10px'); set(el,'right','10px');
+  });
+
+  // Page 11: keep the badge lower, the explanatory note slightly higher, and the CPR animation.
+  p=page(10);
+  set(p?.querySelector('.roscbadge'),'bottom','70px');
+  set(p?.querySelector('.note'),'bottom','16px');
+
+  // Page 12: align the brain and CT visuals, then lower the paired diagnostic tags together.
+  p=page(11);
+  set(p?.querySelector('.brainWrap'),'top','150px');
+  set(p?.querySelector('.ctIcon'),'top','188px');
+  const tags=p?.querySelector('.brainTags');
+  set(tags,'bottom','24px');
+  if(tags) tags.style.setProperty('align-items','center','important');
+
+  // Page 15: a wider caption reduces wrapping without changing its typography.
+  p=page(13);
+  const caption=p?.querySelector('.big-caption');
+  set(caption,'width','min(700px,78%)');
+  set(caption,'max-width','700px');
+})();
+</script>
+</body>
+</html>

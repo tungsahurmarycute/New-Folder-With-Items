@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordan's Drowning Story</title>
+    <meta
+      name="description"
+      content="A clear, public-friendly medical explainer of drowning, aspiration, hypoxemia, cardiac arrest, and recovery."
+    />
+    <style>
+      :root {
+        --bg: #071812;
+        --bg-soft: #0d221d;
+        --panel: rgba(12, 30, 25, 0.92);
+        --panel-2: rgba(19, 46, 39, 0.94);
+        --line: rgba(120, 180, 159, 0.3);
+        --text: #edfdf7;
+        --muted: #cce7d9;
+        --mint: #8fe4bd;
+        --cyan: #8eddf5;
+        --pink: #ff9bb1;
+        --red: #f35b74;
+        --gold: #ffe3a6;
+        --shadow: rgba(0, 0, 0, 0.28);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(32, 75, 63, 0.9), rgba(7, 24, 18, 1) 42%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(7, 24, 18, 0.78);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .brand {
+        font-weight: 900;
+        letter-spacing: -0.06em;
+        font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        font-size: 0.8rem;
+        color: var(--muted);
+        transition: 180ms ease;
+      }
+
+      .nav-links a:hover {
+        background: rgba(143, 228, 189, 0.06);
+        border-color: rgba(143, 228, 189, 0.4);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 6px 0 22px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 20px;
+        border-radius: 14px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #8fe4bd, #b4f1d0);
+        color: #0d241d;
+        box-shadow: 0 14px 26px rgba(143, 228, 189, 0.2);
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.02);
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      main {
+        padding: 42px 0 90px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+        align-items: center;
+        padding: 48px 0 18px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        color: var(--mint);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 16px 0 18px;
+        font-size: clamp(2.7rem, 6vw, 5.2rem);
+        line-height: 0.96;
+        letter-spacing: -0.07em;
+      }
+
+      .lead {
+        max-width: 660px;
+        margin: 0 0 22px;
+        font-size: clamp(1.04rem, 1.7vw, 1.3rem);
+        color: var(--muted);
+      }
+
+      .intro-card {
+        background: linear-gradient(180deg, rgba(14, 38, 32, 0.98), rgba(11, 25, 21, 0.98));
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 24px;
+        box-shadow: 0 18px 50px var(--shadow);
+      }
+
+      .mini-label {
+        display: inline-block;
+        background: rgba(143, 228, 189, 0.12);
+        border: 1px solid rgba(143, 228, 189, 0.45);
+        color: var(--mint);
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-weight: 800;
+        font-size: 0.75rem;
+      }
+
+      .intro-card h2 {
+        margin: 16px 0 10px;
+        font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+        letter-spacing: -0.04em;
+      }
+
+      .key-points {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .key-points li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: var(--muted);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--mint), var(--cyan));
+        margin-top: 9px;
+        flex-shrink: 0;
+      }
+
+      .visual-wrap {
+        display: grid;
+        place-items: center;
+        padding: 26px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(18, 48, 40, 0.9), rgba(6, 17, 13, 0.95));
+        border: 1px solid var(--line);
+        min-height: 420px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .visual-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border-radius: 24px;
+        border: 1px solid rgba(143, 228, 189, 0.12);
+      }
+
+      .lung-graphic {
+        width: min(100%, 420px);
+        filter: drop-shadow(0 12px 26px rgba(0,0,0,0.38));
+      }
+
+      .section {
+        padding-top: 42px;
+      }
+
+      .section-head {
+        margin-bottom: 18px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.06em;
+      }
+
+      .section-head p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        max-width: 720px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        background: rgba(17, 38, 31, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 22px 20px;
+        box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+      }
+
+      .card h3 {
+        margin: 12px 0 8px;
+        font-size: 1.45rem;
+        letter-spacing: -0.04em;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 110px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 158, 177, 0.08);
+        border: 1px solid rgba(255, 158, 177, 0.4);
+        color: var(--pink);
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .story {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .story-panel {
+        background: rgba(15, 36, 31, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 26px 24px;
+      }
+
+      .story-panel h3 {
+        margin-top: 0;
+        font-size: clamp(1.6rem, 2vw, 2.3rem);
+        letter-spacing: -0.05em;
+      }
+
+      .numeric {
+        font-size: clamp(2.1rem, 4vw, 3.1rem);
+        font-weight: 900;
+        letter-spacing: -0.07em;
+        color: var(--gold);
+      }
+
+      .callout {
+        margin-top: 24px;
+        background: linear-gradient(135deg, rgba(21, 61, 47, 0.96), rgba(13, 25, 22, 0.98));
+        border: 1px solid rgba(143, 228, 189, 0.45);
+        border-radius: 24px;
+        padding: 24px;
+      }
+
+      .callout strong {
+        color: var(--mint);
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .step {
+        background: rgba(12, 30, 25, 0.95);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 18px 16px;
+      }
+
+      .step-number {
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+
+      .step h4 {
+        margin: 10px 0 8px;
+        font-size: 1.3rem;
+        letter-spacing: -0.04em;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .quote {
+        margin-top: 28px;
+        background: rgba(255, 255, 255, 0.02);
+        border-left: 4px solid var(--mint);
+        border-radius: 0 14px 14px 0;
+        padding: 18px 22px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .signal {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(143, 228, 189, 0.08);
+        border: 1px solid rgba(143, 228, 189, 0.45);
+        color: var(--mint);
+        font-size: 0.73rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      footer {
+        padding-top: 38px;
+        color: #b8d4c7;
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .story,
+        .grid,
+        .timeline {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">Jordan’s Drowning Story</div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#overview">Overview</a>
+          <a href="#pathophysiology">Pathophysiology</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#recovery">Recovery</a>
+          <a href="finaljordan(1).html">Interactive deep dive</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" id="overview">
+        <div>
+          <div class="signal">Launch-ready public version</div>
+          <div class="eyebrow" style="margin-top:16px;">Public explainer</div>
+          <h1>What happens when drowning becomes a medical emergency?</h1>
+          <p class="lead">
+            Drowning is first a breathing problem. When oxygen delivery is interrupted, the lungs,
+            heart, and brain begin to struggle in sequence. This is a simplified public version of
+            the clinical chain: aspiration, alveolar injury, hypoxemia, cardiac arrest, and post-arrest recovery.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="finaljordan(1).html">Open interactive story</a>
+            <a class="btn btn-secondary" href="#overview">Read public explainer</a>
+          </div>
+          <div class="intro-card">
+            <span class="mini-label">Medical chain</span>
+            <h2>From water exposure to oxygen failure</h2>
+            <ul class="key-points">
+              <li><span class="dot"></span><span>Water enters the airway and alveoli, interrupting normal gas exchange.</span></li>
+              <li><span class="dot"></span><span>Fluid and inflammation damage the air sacs and reduce oxygen transfer.</span></li>
+              <li><span class="dot"></span><span>Severe hypoxemia can trigger cardiac arrest, then brain injury if oxygen is absent too long.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-wrap" aria-label="Illustration of lungs and airway">
+          <svg class="lung-graphic" viewBox="0 0 420 420" role="img" aria-labelledby="lungTitle lungDesc">
+            <title id="lungTitle">Lung and airway illustration</title>
+            <desc id="lungDesc">Stylized lungs with some water and a reduced oxygen flow.</desc>
+            <defs>
+              <linearGradient id="lungGrad" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ffb4c2" />
+                <stop offset="100%" stop-color="#ff7f9d" />
+              </linearGradient>
+              <linearGradient id="waterGrad" x1="0" x2="1">
+                <stop offset="0%" stop-color="#8cdaf5" />
+                <stop offset="100%" stop-color="#5cb8dc" />
+              </linearGradient>
+            </defs>
+            <g opacity="0.95">
+              <path d="M144 116 C111 98, 52 127, 44 190 C32 263, 67 322, 134 323 C163 323, 185 305, 194 278 L196 167 C198 139, 179 125, 144 116 Z" fill="url(#lungGrad)" stroke="#6e2b45" stroke-width="8"/>
+              <path d="M276 116 C309 98, 368 127, 376 190 C388 263, 353 322, 286 323 C257 323, 235 305, 226 278 L224 167 C222 139, 241 125, 276 116 Z" fill="url(#lungGrad)" stroke="#6e2b45" stroke-width="8"/>
+              <path d="M170 120 C150 72, 112 52, 92 86 C77 112, 85 145, 112 161" fill="none" stroke="#ffdfe7" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+              <path d="M250 120 C270 72, 308 52, 328 86 C343 112, 335 145, 308 161" fill="none" stroke="#ffdfe7" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+              <path d="M172 232 C211 215, 233 222, 251 239" fill="none" stroke="#ffccd8" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+              <path d="M141 278 C164 294, 187 299, 210 291" fill="none" stroke="#ffccd8" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+              <path d="M279 278 C256 294, 233 299, 210 291" fill="none" stroke="#ffccd8" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+            </g>
+            <g>
+              <path d="M76 248 C90 186, 149 161, 196 210 C220 234, 198 286, 166 299 C124 316, 82 286, 76 248 Z" fill="url(#waterGrad)" opacity="0.7"/>
+              <path d="M343 248 C329 186, 270 161, 224 210 C200 234, 222 286, 254 299 C296 316, 338 286, 343 248 Z" fill="url(#waterGrad)" opacity="0.7"/>
+              <path d="M202 84 L210 60 L218 84" fill="none" stroke="#e0fbff" stroke-width="8" stroke-linecap="round"/>
+              <path d="M212 58 L212 38" stroke="#e0fbff" stroke-width="8" stroke-linecap="round"/>
+              <path d="M124 94 C134 78, 147 70, 161 73" fill="none" stroke="#d4f6ff" stroke-width="8" stroke-linecap="round"/>
+              <path d="M296 94 C286 78, 273 70, 259 73" fill="none" stroke="#d4f6ff" stroke-width="8" stroke-linecap="round"/>
+            </g>
+            <g fill="#d3f8ff" font-size="22" font-family="sans-serif" font-weight="700">
+              <text x="63" y="365">low</text>
+              <text x="291" y="365">O₂</text>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section" id="pathophysiology">
+        <div class="section-head">
+          <div class="eyebrow">What goes wrong?</div>
+          <h2>The body stops delivering oxygen effectively.</h2>
+          <p>
+            The problem is not just “water in the lungs.” Drowning causes a cascade of physiologic injury:
+            airway obstruction, surfactant disruption, alveolar collapse, fluid leakage, worsening oxygen transfer,
+            and eventually severe hypoxemia.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="badge">1. Airway</div>
+            <h3>Airway and alveoli are hit first.</h3>
+            <p>
+              Water enters the respiratory tract. The air spaces can no longer fill properly, and the normal
+              gas exchange process starts to fail.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="badge">2. Inflammation</div>
+            <h3>Fluid and swelling worsen the damage.</h3>
+            <p>
+              The alveolar-capillary barrier becomes leaky. Fluid accumulates, oxygen transfer falls, and the lungs
+              become less able to ventilate normally.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="badge">3. Hypoxemia</div>
+            <h3>Oxygen levels drop dangerously.</h3>
+            <p>
+              The blood leaves the lungs poorly oxygenated. With severe hypoxemia, the heart and brain begin to fail.
+            </p>
+          </article>
+        </div>
+
+        <div class="story">
+          <div class="story-panel">
+            <div class="eyebrow">Key point</div>
+            <h3>Why oxygen matters so much</h3>
+            <div class="numeric">PaO₂ 50</div>
+            <p>
+              In severe hypoxemia, the blood is not carrying enough oxygen even with high inspired oxygen. This is why
+              the body can deteriorate rapidly, even before respiratory failure looks obvious at the bedside.
+            </p>
+          </div>
+
+          <div class="story-panel">
+            <div class="eyebrow">Critical idea</div>
+            <h3>Hypoxia can lead to cardiac arrest.</h3>
+            <p>
+              When the heart and brain are starved of oxygen long enough, the rhythm can fail and circulation stops.
+              Cardiac arrest after drowning is usually the result of the oxygen crisis rather than a separate primary
+              cardiac event.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <div class="eyebrow">Timeline</div>
+          <h2>From submersion to recovery</h2>
+          <p>
+            Recovery depends on how long oxygen was interrupted, how severe the lung injury is, and how well the brain
+            and heart are protected after circulation is restored.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="step">
+            <div class="step-number">Step 1</div>
+            <h4>Submersion</h4>
+            <p>Breathing is impaired and oxygen delivery stops.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">Step 2</div>
+            <h4>Aspiration</h4>
+            <p>Water and inflammatory injury reach the airways and alveoli.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">Step 3</div>
+            <h4>ARDS-like physiology</h4>
+            <p>Fluid leakage, collapse, and shunt worsen oxygenation.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">Step 4</div>
+            <h4>Cardiac arrest / ROSC</h4>
+            <p>Circulation may stop, then return with resuscitation.</p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <strong>Important:</strong> a patient can survive the event but still face brain injury, pulmonary edema,
+          and prolonged organ vulnerability after return of spontaneous circulation (ROSC). The recovery stage is not just
+          “the heart is beating again”; it is about protecting the brain and other organs from secondary injury.
+        </div>
+      </section>
+
+      <section class="section" id="recovery">
+        <div class="section-head">
+          <div class="eyebrow">Recovery and care</div>
+          <h2>After ROSC, clinicians focus on protection</h2>
+          <p>
+            Oxygenation, blood pressure, ventilation, temperature management, and neuroprognostication all matter.
+            A single early test should not decide the whole story.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="badge">Oxygen</div>
+            <h3>Protect oxygen delivery</h3>
+            <p>Oxygenation and ventilation need to be stabilized early and continuously monitored.</p>
+          </article>
+
+          <article class="card">
+            <div class="badge">Brain</div>
+            <h3>Protect the brain</h3>
+            <p>Hypoxic-ischemic injury can cause swelling, seizures, and neurologic dysfunction.</p>
+          </article>
+
+          <article class="card">
+            <div class="badge">Timing</div>
+            <h3>Interpret over time</h3>
+            <p>Serial exams, EEG, CT/MRI, and temperature management help guide prognosis and care.</p>
+          </article>
+        </div>
+
+        <blockquote class="quote">
+          “The goal is not only to restart the heart, but to prevent secondary injury and help the brain recover while the body stabilizes.”
+        </blockquote>
+      </section>
+
+      <footer>
+        welcome to jordan's canon event
+      </footer>
+    </main>
+  </body>
+</html>
