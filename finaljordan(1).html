@@ -588,13 +588,29 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 }
 .page[data-page="2"] .water-stream>.waterico{
   width:128px!important;
+  position:relative!important;
+  left:-60px!important;
+  top:0!important;
+  transform:none!important;
 }
 .page[data-page="2"] .airwayScene>.speech{
   font-size:21px!important;
 }
+.page[data-page="2"] .airwayScene>.lungsico{
+  right:calc(18% - 120px)!important;
+}
+.page[data-page="2"] .airwayScene>.speech[style*="left: 5%"]{
+  left:calc(25% - 50px)!important;
+  top:120px!important;
+  right:auto!important;
+}
 @media(max-width:600px){
   .page[data-page="2"] .airwayScene>.speech{
     font-size:17px!important;
+  }
+  .page[data-page="2"] .airwayScene>.speech[style*="left: 5%"]{
+    left:calc(10% - 20px)!important;
+    top:120px!important;
   }
 }
 .page[data-page="12"] .careGrid>.careItem>b{
@@ -1499,8 +1515,17 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   set(p?.querySelector('.airwayScene>.lungsico'),'width','365px');
   set(p?.querySelector('.airwayScene>.lungsico'),'max-width','365px');
   set(p?.querySelector('.airwayScene>.lungsico'),'left','auto');
-  set(p?.querySelector('.airwayScene>.lungsico'),'right','calc(18% - 80px)');
-  set(p?.querySelector('.water-stream>.waterico'),'width','128px');
+  set(p?.querySelector('.airwayScene>.lungsico'),'right','calc(18% - 120px)');
+  const airwayWater=p?.querySelector('.water-stream>.waterico');
+  set(airwayWater,'width','128px');
+  set(airwayWater,'position','relative');
+  set(airwayWater,'left','-60px');
+  set(airwayWater,'top','0');
+  set(airwayWater,'transform','none');
+  const airwayWaterSpeech=p?.querySelector('.airwayScene>.speech[style*="left: 5%"]');
+  set(airwayWaterSpeech,'left',window.matchMedia('(max-width: 600px)').matches?'calc(10% - 20px)':'calc(25% - 50px)');
+  set(airwayWaterSpeech,'top','120px');
+  set(airwayWaterSpeech,'right','auto');
   const airwaySpeechSize=window.matchMedia('(max-width: 600px)').matches?'17px':'21px';
   all(p,'.airwayScene>.speech').forEach(el=>set(el,'font-size',airwaySpeechSize));
 
