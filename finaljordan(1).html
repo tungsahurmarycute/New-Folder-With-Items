@@ -549,9 +549,16 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 }
 @media(max-width:600px){
   .page[data-page="10"] .roscScene>.hand-speech{
-    left:50%!important;
-    top:328px!important;
+    left:calc(50% - 45px)!important;
+    top:105px!important;
     transform:translateX(-50%)!important;
+  }
+  .page[data-page="10"] .monitorWrap{
+    left:auto!important;
+    right:4%!important;
+    top:400px!important;
+    width:250px!important;
+    transform:none!important;
   }
 }
 .page[data-page="10"] .hand-speech::after{content:"";position:absolute;left:34px;bottom:-14px;border-width:14px 10px 0 0;border-style:solid;border-color:#17392e transparent transparent transparent;}
@@ -1309,13 +1316,23 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   });
   const handSpeech=p?.querySelector('.roscScene>.hand-speech');
   if(handSpeech){
-    handSpeech.style.setProperty('left','calc(15% + 120px)','important');
+    const mobile=window.matchMedia('(max-width:600px)').matches;
+    handSpeech.style.setProperty('left',mobile?'calc(50% - 45px)':'calc(15% + 110px)','important');
     handSpeech.style.setProperty('right','auto','important');
-    handSpeech.style.setProperty('top','103px','important');
+    handSpeech.style.setProperty('top',mobile?'105px':'103px','important');
     handSpeech.style.setProperty('width','max-content','important');
     handSpeech.style.setProperty('max-width','none','important');
     handSpeech.style.setProperty('white-space','nowrap','important');
     handSpeech.style.setProperty('transform','translateX(-50%)','important');
+  }
+  const monitor=p?.querySelector('.monitorWrap');
+  if(monitor){
+    const mobile=window.matchMedia('(max-width:600px)').matches;
+    monitor.style.setProperty('left',mobile?'auto':'','important');
+    monitor.style.setProperty('right',mobile?'4%':'8%','important');
+    monitor.style.setProperty('top',mobile?'400px':'120px','important');
+    monitor.style.setProperty('width',mobile?'250px':'300px','important');
+    monitor.style.setProperty('transform',mobile?'none':'','important');
   }
   const cprVisual=p?.querySelector('.cprVisual');
   if(cprVisual){
