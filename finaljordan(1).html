@@ -584,18 +584,22 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
   width:365px!important;
   max-width:365px!important;
   left:auto!important;
-  right:calc(18% - 50px)!important;
+  right:calc(18% - 80px)!important;
 }
 .page[data-page="2"] .water-stream>.waterico{
-  width:88px!important;
+  width:128px!important;
 }
 .page[data-page="2"] .airwayScene>.speech{
-  font-size:23px!important;
+  font-size:21px!important;
 }
 @media(max-width:600px){
   .page[data-page="2"] .airwayScene>.speech{
-    font-size:19px!important;
+    font-size:17px!important;
   }
+}
+.page[data-page="12"] .careGrid>.careItem>b{
+  position:relative!important;
+  top:5px!important;
 }
 .page[data-page="10"] .cprVisual{
   left:calc(13% - 25px)!important;
@@ -1479,10 +1483,16 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   set(p?.querySelector('.airwayScene>.lungsico'),'width','365px');
   set(p?.querySelector('.airwayScene>.lungsico'),'max-width','365px');
   set(p?.querySelector('.airwayScene>.lungsico'),'left','auto');
-  set(p?.querySelector('.airwayScene>.lungsico'),'right','calc(18% - 50px)');
-  set(p?.querySelector('.water-stream>.waterico'),'width','88px');
-  const airwaySpeechSize=window.matchMedia('(max-width: 600px)').matches?'19px':'23px';
+  set(p?.querySelector('.airwayScene>.lungsico'),'right','calc(18% - 80px)');
+  set(p?.querySelector('.water-stream>.waterico'),'width','128px');
+  const airwaySpeechSize=window.matchMedia('(max-width: 600px)').matches?'17px':'21px';
   all(p,'.airwayScene>.speech').forEach(el=>set(el,'font-size',airwaySpeechSize));
+
+  p=page(12);
+  all(p,'.careGrid>.careItem>b').forEach(el=>{
+   set(el,'position','relative');
+   set(el,'top','5px');
+  });
 
   // Page 4: preserve the guide's position while giving it the intended height.
   p=page(3);
