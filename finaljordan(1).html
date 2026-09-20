@@ -601,6 +601,22 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
   position:relative!important;
   top:5px!important;
 }
+/* Page 05 — align the atelectasis alveoli and keep their dialogue in-card. */
+.page[data-page="4"] .compare-card.good>.alveolusico,
+.page[data-page="4"] .compare-card.bad>.alveolusico{
+  top:0!important;
+  bottom:auto!important;
+  transform:translateY(55px)!important;
+}
+.page[data-page="4"] .compare-card>.speech{
+  position:absolute!important;
+  top:272px!important;
+  bottom:auto!important;
+  left:10px!important;
+  right:10px!important;
+  width:auto!important;
+  max-width:none!important;
+}
 .page[data-page="10"] .cprVisual{
   left:calc(13% - 25px)!important;
 }
@@ -1513,6 +1529,32 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   all(p,'.compare-card.good>h3,.compare-card.bad>h3').forEach(el=>{
     set(el,'transform','translate(-50px,-182px)');
   });
+
+  // Page 5: move each atelectasis speech bubble into its matching card and remove duplicate paragraphs.
+  p=page(4);
+  if(p){
+    const good=p.querySelector('.compare-card.good');
+    const bad=p.querySelector('.compare-card.bad');
+    const speeches=[...p.querySelectorAll(':scope>.scene>.speech')];
+    const paragraphs=[...p.querySelectorAll('.compare-card.good>p,.compare-card.bad>p')];
+    if(speeches[0]&&good) good.appendChild(speeches[0]);
+    if(speeches[1]&&bad) bad.appendChild(speeches[1]);
+    paragraphs.forEach(el=>el.remove());
+    all(p,'.compare-card.good>.alveolusico,.compare-card.bad>.alveolusico').forEach(el=>{
+      set(el,'top','0');
+      set(el,'bottom','auto');
+      set(el,'transform','translateY(55px)');
+    });
+    all(p,'.compare-card>.speech').forEach(el=>{
+      set(el,'position','absolute');
+      set(el,'top','272px');
+      set(el,'bottom','auto');
+      set(el,'left','10px');
+      set(el,'right','10px');
+      set(el,'width','auto');
+      set(el,'max-width','none');
+    });
+  }
 
   // Page 6: lift the blood label while keeping the two side compositions intact.
   p=page(5);
