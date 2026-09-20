@@ -579,6 +579,24 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
   position:relative!important;
   top:-15px!important;
 }
+/* Page 03 — enlarge and separate the airway artwork without changing its vertical layout. */
+.page[data-page="2"] .airwayScene>.lungsico{
+  width:365px!important;
+  max-width:365px!important;
+  left:auto!important;
+  right:calc(18% - 50px)!important;
+}
+.page[data-page="2"] .water-stream>.waterico{
+  width:88px!important;
+}
+.page[data-page="2"] .airwayScene>.speech{
+  font-size:23px!important;
+}
+@media(max-width:600px){
+  .page[data-page="2"] .airwayScene>.speech{
+    font-size:19px!important;
+  }
+}
 .page[data-page="10"] .cprVisual{
   left:calc(13% - 25px)!important;
 }
@@ -969,8 +987,9 @@ svg.ico.waterico{
 <div class="scene"><div class="scene-title">2 • 💧 aspiration</div>
 <div class="airwayScene"><div class="water-stream" style="left: 25% !important;"><svg class="ico waterico" viewBox="0 0 260 300">
 <path d="M130 22S45 126 45 190c0 51 37 88 85 88s85-37 85-88C215 126 130 22 130 22z" fill="#5cccf1" filter="url(#shadow)" stroke="#174d69" stroke-width="10"></path>
-<path d="M87 190c17-21 49-25 68-8" fill="none" stroke="#dffaff" stroke-linecap="round" stroke-width="10"></path>
-<circle cx="105" cy="160" fill="#19495c" r="8"></circle><circle cx="157" cy="160" fill="#19495c" r="8"></circle>
+<path d="M92 145L114 161M114 145L92 161M146 161L168 145M146 145L168 161" fill="none" stroke="#651d2d" stroke-linecap="round" stroke-width="8"></path>
+<path d="M90 203q40-31 80 0q-40 35-80 0z" fill="#651d2d" stroke="#f7b6c2" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M101 199l5 11M116 193l4 14M132 192v15M148 193l-4 14M163 199l-5 11" stroke="#f7b6c2" stroke-width="4"></path>
 </svg></div><svg class="ico lungsico" viewBox="0 0 520 430" style="top: 108px !important;">
 <path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
 <path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
@@ -1454,10 +1473,17 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   }
   set(p?.querySelector('.waterdrop'),'right','21%');
 
-  // Page 3: move the airway stream right, and raise the lungs as a group.
+  // Page 3: move and enlarge the airway artwork while preserving the scene flow.
   p=page(2);
   set(p?.querySelector('.water-stream'),'left','25%');
   set(p?.querySelector('.airwayScene>.lungsico'),'top','108px');
+  set(p?.querySelector('.airwayScene>.lungsico'),'width','365px');
+  set(p?.querySelector('.airwayScene>.lungsico'),'max-width','365px');
+  set(p?.querySelector('.airwayScene>.lungsico'),'left','auto');
+  set(p?.querySelector('.airwayScene>.lungsico'),'right','calc(18% - 50px)');
+  set(p?.querySelector('.water-stream>.waterico'),'width','88px');
+  const airwaySpeechSize=window.matchMedia('(max-width: 600px)').matches?'19px':'23px';
+  all(p,'.airwayScene>.speech').forEach(el=>set(el,'font-size',airwaySpeechSize));
 
   // Page 4: preserve the guide's position while giving it the intended height.
   p=page(3);
