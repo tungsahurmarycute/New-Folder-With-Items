@@ -1065,7 +1065,7 @@ svg.ico.waterico{
 <div class="scene"><div class="scene-title">8 • 🫁 severe hypoxemia</div>
 <div class="dashboard">
 <div class="abgCard"><div class="abgTitle">ABG</div><div><b>pH</b><strong>7.11</strong></div><div><b>PaCO₂</b><strong>58</strong><small>mmHg</small></div><div class="danger"><b>PaO₂</b><strong>50</strong><small>mmHg</small></div><div><b>HCO₃⁻</b><strong>16</strong><small>mEq/L</small></div></div>
-<div class="oxygenCard"><div class="o2bubble">FiO₂ 100%</div><strong>↓ PaO₂ 50 mmHg<br>↓ SpO₂ 84%</strong><span>severe hypoxemia</span><div class="speech clean-left clean-bottom" style="z-index: 60; margin: 0px; text-align: center; box-sizing: border-box; position: absolute; left: 10px !important; right: 10px !important; bottom: 14px !important; max-width: none;">FiO₂: “binigay ko na sayo lahat2!!! pati 100% oxygen ko!”</div></div>
+<div class="oxygenCard"><div class="o2bubble">FiO₂ 100%</div><strong>↓ PaO₂ 50 mmHg<br>↓ SpO₂ 84%</strong><span>severe hypoxemia</span></div><div class="speech clean-left clean-bottom fio2-speech" style="z-index: 60; margin: 0px; text-align: center; box-sizing: border-box; position: absolute; left: 50%; right: auto; bottom: 14px !important; width: 260px; max-width: 260px; transform: translateX(-50%);">FiO₂: “binigay ko na sayo lahat2!!! pati 100% oxygen ko!”</div>
 <div class="mini-lung"><svg class="ico lungsico" viewBox="0 0 520 430">
 <path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
 <path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
@@ -1474,7 +1474,12 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   // Page 9: raise both card bubbles by the same amount and preserve alignment.
   p=page(8);
   all(p,'.dashboard .speech').forEach(el=>{
-    set(el,'bottom','14px'); set(el,'left','10px'); set(el,'right','10px');
+    set(el,'bottom','14px');
+    set(el,'left','50%');
+    set(el,'right','auto');
+    set(el,'width','260px');
+    set(el,'max-width','260px');
+    set(el,'transform','translateX(-50%)');
   });
 
   // Page 11: keep the badge lower, the explanatory note slightly higher, and the CPR animation.
