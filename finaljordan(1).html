@@ -533,7 +533,7 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 .page[data-page="10"] .hand-speech{left:150px!important;top:18px!important;width:220px!important;max-width:220px!important;}
 .page[data-page="10"] .roscScene>.hand-speech{
   left:calc(15% + 120px)!important;
-  top:103px!important;
+  top:123px!important;
   width:max-content!important;
   max-width:none!important;
   white-space:nowrap!important;
@@ -617,7 +617,7 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 @media(max-width:600px){
   .page[data-page="10"] .roscScene>.hand-speech{
     left:calc(50% - 45px)!important;
-    top:105px!important;
+    top:125px!important;
     transform:translateX(-50%)!important;
   }
   .page[data-page="10"] .monitorWrap{
@@ -987,9 +987,8 @@ svg.ico.waterico{
 <div class="scene"><div class="scene-title">2 • 💧 aspiration</div>
 <div class="airwayScene"><div class="water-stream" style="left: 25% !important;"><svg class="ico waterico" viewBox="0 0 260 300">
 <path d="M130 22S45 126 45 190c0 51 37 88 85 88s85-37 85-88C215 126 130 22 130 22z" fill="#5cccf1" filter="url(#shadow)" stroke="#174d69" stroke-width="10"></path>
-<path d="M92 145L114 161M114 145L92 161M146 161L168 145M146 145L168 161" fill="none" stroke="#651d2d" stroke-linecap="round" stroke-width="8"></path>
-<path d="M90 203q40-31 80 0q-40 35-80 0z" fill="#651d2d" stroke="#f7b6c2" stroke-linejoin="round" stroke-width="6"></path>
-<path d="M101 199l5 11M116 193l4 14M132 192v15M148 193l-4 14M163 199l-5 11" stroke="#f7b6c2" stroke-width="4"></path>
+<circle cx="105" cy="160" fill="#19495c" r="8"></circle><circle cx="157" cy="160" fill="#19495c" r="8"></circle>
+<path d="M91 193q39 34 78 0" fill="none" stroke="#19495c" stroke-linecap="round" stroke-width="8"></path>
 </svg></div><svg class="ico lungsico" viewBox="0 0 520 430" style="top: 108px !important;">
 <path d="M248 55h24v85" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="20"></path>
 <path d="M260 130c-22 18-43 39-58 64M260 130c22 18 43 39 58 64M202 190c-22 24-40 49-52 80M318 190c22 24 40 49 52 80" fill="none" stroke="#e8fff5" stroke-linecap="round" stroke-width="15"></path>
@@ -1387,7 +1386,7 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
     const mobile=window.matchMedia('(max-width:600px)').matches;
     handSpeech.style.setProperty('left',mobile?'calc(50% - 45px)':'calc(15% + 110px)','important');
     handSpeech.style.setProperty('right','auto','important');
-    handSpeech.style.setProperty('top',mobile?'105px':'103px','important');
+    handSpeech.style.setProperty('top',mobile?'125px':'123px','important');
     handSpeech.style.setProperty('width','max-content','important');
     handSpeech.style.setProperty('max-width','none','important');
     handSpeech.style.setProperty('white-space','nowrap','important');
