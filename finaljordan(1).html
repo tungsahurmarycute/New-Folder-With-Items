@@ -434,6 +434,49 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
  .page[data-page="11"] .brainScene>.speech:nth-of-type(3){left:3%!important;right:auto!important;top:165px!important;width:44%!important;}
  .page[data-page="11"] .brainScene>.speech:nth-of-type(4){right:3%!important;left:auto!important;top:165px!important;width:44%!important;}
 }
+
+/* Pulmonary-edema scene: use semantic modifiers instead of nth-of-type positioning. */
+.page[data-page="6"] .edemaScene>.speech--alveolus{
+  left:4%!important;
+  right:auto!important;
+  top:82px!important;
+  bottom:auto!important;
+  width:190px!important;
+  max-width:42%!important;
+  text-align:center;
+}
+.page[data-page="6"] .edemaScene>.speech--fluid{
+  left:auto!important;
+  right:4%!important;
+  top:92px!important;
+  bottom:auto!important;
+  width:190px!important;
+  max-width:42%!important;
+  text-align:center;
+}
+.page[data-page="6"] .edemaScene>.speech--response{
+  left:50%!important;
+  right:auto!important;
+  top:154px!important;
+  bottom:auto!important;
+  width:120px!important;
+  max-width:30%!important;
+  transform:translateX(-50%);
+  text-align:center;
+}
+@media(max-width:900px){
+  .page[data-page="6"] .edemaScene>.speech--alveolus,
+  .page[data-page="6"] .edemaScene>.speech--fluid{
+    top:84px!important;
+    width:43%!important;
+    max-width:43%!important;
+  }
+  .page[data-page="6"] .edemaScene>.speech--response{
+    top:154px!important;
+    width:110px!important;
+    max-width:30%!important;
+  }
+}
 </style>
 </head>
 <body>
@@ -630,7 +673,7 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 <circle cx="130" cy="125" fill="#43242c" r="9"></circle><circle cx="173" cy="125" fill="#43242c" r="9"></circle>
 <path d="M132 154q18 12 36 0" fill="none" stroke="#6a283b" stroke-linecap="round" stroke-width="7"></path>
 </svg></div>
-<div class="secretions">pink frothy<br/>secretions</div><div class="speech" style="left:5%;top:13%">alveolus: “kinsay nagpasulod ani”<br/>edema fluid: “nakalusot ko, buot ka?”</div><div class="speech" style="right:5%;top:22%">alveolus: “ay”</div></div></div>
+<div class="secretions">pink frothy<br/>secretions</div><div class="speech speech--alveolus">alveolus: “kinsay nagpasulod ani”</div><div class="speech speech--fluid">edema fluid: “nakalusot ko, buot ka?”</div><div class="speech speech--response">alveolus: “ay”</div></div></div>
 <div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
 </article>
 <article class="page" data-page="7">
