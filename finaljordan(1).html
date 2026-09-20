@@ -3,6 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport">
+<script src="fixes.js" defer></script>
 <title>jordan's drowning</title>
 <style>
 :root{--bg:#071412;--panel:#0d211c;--panel2:#102c24;--line:#315b4d;--text:#effff8;--muted:#b9d4c8;--mint:#7ce0b1;--cyan:#74d9f4;--pink:#ff8ea6;--red:#f2556e;--gold:#ffe49a;--blue:#5ecaf0}
@@ -99,6 +100,17 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 .page[data-page="8"] > .scene>.speech:nth-of-type(1){left:3%!important;right:auto!important;}
 .page[data-page="8"] > .scene>.speech:nth-of-type(2){right:3%!important;left:auto!important;}
 /* Page 10 — speech sits on the corresponding visual, centered at the top of each box. */
+/* Cardiac-arrest brain bubble: bottom-left, clear of both the heart icon and the monitor. */
+.page[data-page="9"] .arrestScene>.moved-brain-speech{
+  left:4%!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:56px!important;
+  transform:none!important;
+  width:250px!important;
+  max-width:250px!important;
+  text-align:center;
+}
 .page[data-page="9"] .heartWrap{left:12%!important;top:150px!important;}
 .page[data-page="9"] .monitorWrap{right:8%!important;top:150px!important;}
 .page[data-page="9"] > .scene .speech:nth-of-type(1){left:12%!important;top:106px!important;right:auto!important;width:260px!important;text-align:center;}
@@ -110,12 +122,6 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 }
 .page[data-page="9"] .note{
   bottom:16px!important;
-}
-.page[data-page="9"] .moved-brain-speech{
-  left:50%!important;
-  top:250px!important;
-  right:auto!important;
-  transform:translateX(-50%)!important;
 }
 /* Page 11 — CPR speech near the hands; returned-heart speech centered over the monitor. */
 .page[data-page="10"] .cprVisual{left:13%!important;top:155px!important;}
@@ -709,16 +715,17 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
   }
 }
 .page[data-page="10"] .hand-speech::after{content:"";position:absolute;left:34px;bottom:-14px;border-width:14px 10px 0 0;border-style:solid;border-color:#17392e transparent transparent transparent;}
-.page[data-page="11"] .brainScene>.speech{position:absolute!important;z-index:60!important;width:220px!important;max-width:220px!important;}
-.page[data-page="11"] .brainScene>.speech:nth-of-type(1){left:8%!important;top:72px!important;}
-.page[data-page="11"] .brainScene>.speech:nth-of-type(2){left:31%!important;top:72px!important;}
-.page[data-page="11"] .brainScene>.speech:nth-of-type(3){right:31%!important;left:auto!important;top:72px!important;}
-.page[data-page="11"] .brainScene>.speech:nth-of-type(4){right:8%!important;left:auto!important;top:72px!important;}
+/* .brainScene is doubled in specificity so these win over the older .brainScene>.speech{position:relative} rule above the cascade. */
+.page[data-page="11"] .brainScene.brainScene>.speech{position:absolute!important;z-index:60!important;width:220px!important;max-width:220px!important;}
+.page[data-page="11"] .brainScene.brainScene>.speech:nth-child(3){left:8%!important;right:auto!important;top:72px!important;}
+.page[data-page="11"] .brainScene.brainScene>.speech:nth-child(4){right:8%!important;left:auto!important;top:72px!important;}
+.page[data-page="11"] .brainScene.brainScene>.speech:nth-child(5){left:8%!important;right:auto!important;top:170px!important;}
+.page[data-page="11"] .brainScene.brainScene>.speech:nth-child(6){right:8%!important;left:auto!important;top:170px!important;}
 @media(max-width:600px){
  .page[data-page="0"] .organ-card .lungsico{transform:translateY(-28px)!important;}
  .page[data-page="10"] .hand-speech{left:50%!important;top:12px!important;transform:translateX(-50%)!important;width:190px!important;max-width:190px!important;}
- .page[data-page="11"] .brainScene>.speech:nth-of-type(1){left:3%!important;top:72px!important;width:44%!important;}
- .page[data-page="11"] .brainScene>.speech:nth-of-type(2){left:auto!important;right:3%!important;top:72px!important;width:44%!important;}
+ .page[data-page="11"] .brainScene>.speech:nth-child(3){left:3%!important;right:auto!important;top:80px!important;width:44%!important;}
+ .page[data-page="11"] .brainScene>.speech:nth-child(4){right:3%!important;left:auto!important;top:80px!important;width:44%!important;}
  .page[data-page="11"] .brainScene>.speech:nth-of-type(3){left:3%!important;right:auto!important;top:165px!important;width:44%!important;}
  .page[data-page="11"] .brainScene>.speech:nth-of-type(4){right:3%!important;left:auto!important;top:165px!important;width:44%!important;}
 }
