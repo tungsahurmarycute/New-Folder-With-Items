@@ -544,6 +544,10 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 .page[data-page="10"] .monitorWrap{
   top:205px!important;
 }
+.page[data-page="8"] .dashboard>.fio2-speech,
+.page[data-page="8"] .dashboard>.mini-lung>.speech{
+  font-size:14.5px!important;
+}
 .page[data-page="10"] .cprVisual{
   left:calc(13% - 25px)!important;
 }
@@ -1496,6 +1500,7 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
     set(el,'right','auto');
     set(el,'width','260px');
     set(el,'max-width','260px');
+    set(el,'font-size','14.5px');
     set(el,'transform','translateX(-50%)');
   });
 
