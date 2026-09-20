@@ -538,12 +538,14 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
   max-width:none!important;
   white-space:nowrap!important;
 }
-.page[data-page="10"] .cprVisual>.cprHands{
-  left:75px!important;
+.page[data-page="10"] .cprVisual{
+  left:calc(13% - 30px)!important;
 }
-.page[data-page="10"] .cprVisual>.heartico{
-  position:relative!important;
-  left:-30px!important;
+@media(max-width:600px){
+  .page[data-page="10"] .cprVisual{
+    left:calc(50% - 30px)!important;
+    transform:translateX(-50%)!important;
+  }
 }
 @media(max-width:600px){
   .page[data-page="10"] .roscScene>.hand-speech{
@@ -1315,12 +1317,11 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
     handSpeech.style.setProperty('white-space','nowrap','important');
     handSpeech.style.setProperty('transform','translateX(-50%)','important');
   }
-  const cprHands=p?.querySelector('.cprVisual>.cprHands');
-  if(cprHands) cprHands.style.setProperty('left','75px','important');
-  const cprHeart=p?.querySelector('.cprVisual>.heartico');
-  if(cprHeart){
-    cprHeart.style.setProperty('position','relative','important');
-    cprHeart.style.setProperty('left','-30px','important');
+  const cprVisual=p?.querySelector('.cprVisual');
+  if(cprVisual){
+    const mobile=window.matchMedia('(max-width:600px)').matches;
+    cprVisual.style.setProperty('left',mobile?'calc(50% - 30px)':'calc(13% - 30px)','important');
+    if(mobile) cprVisual.style.setProperty('transform','translateX(-50%)','important');
   }
 })();
 </script>
