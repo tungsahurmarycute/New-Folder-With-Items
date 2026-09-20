@@ -694,6 +694,96 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
   font-size:14px;
   line-height:1.25;
 }
+/* Gojo-inspired overlays stay inside the original hand-drawn medical icons. */
+.brainWrap,
+.ctIcon{
+  overflow:hidden;
+}
+.brainWrap .brain-overlay{
+  position:absolute;
+  z-index:1;
+  left:11%;
+  top:8%;
+  width:78%;
+  height:84%;
+  object-fit:cover;
+  object-position:center top;
+  opacity:.28;
+  mix-blend-mode:multiply;
+  clip-path:ellipse(46% 48% at 50% 50%);
+  pointer-events:none;
+}
+.brainWrap>.brainico{
+  position:relative;
+  z-index:2;
+}
+.ctIcon .ct-overlay{
+  position:absolute;
+  z-index:0;
+  inset:10px 16px 18px;
+  width:calc(100% - 32px);
+  height:calc(100% - 28px);
+  object-fit:cover;
+  object-position:center top;
+  opacity:.24;
+  mix-blend-mode:multiply;
+  clip-path:inset(0 round 18px);
+  pointer-events:none;
+}
+.ctIcon{
+  isolation:isolate;
+  position:absolute;
+}
+.page[data-page="9"] .arrest-sequence{
+  position:absolute!important;
+  z-index:45!important;
+  width:210px!important;
+  max-width:210px!important;
+  text-align:center!important;
+}
+.page[data-page="9"] .arrest-hypoxic{
+  left:4%!important;
+  top:18px!important;
+}
+.page[data-page="9"] .arrest-ischemic{
+  left:19%!important;
+  top:188px!important;
+}
+.page[data-page="9"] .arrest-pulse{
+  left:13%!important;
+  top:360px!important;
+  width:240px!important;
+  max-width:240px!important;
+}
+.page[data-page="9"] .moved-brain-speech{
+  display:none!important;
+}
+.page[data-page="11"] .brain-sequence{
+  position:absolute!important;
+  z-index:60!important;
+  width:220px!important;
+  max-width:220px!important;
+}
+.page[data-page="11"] .brain-hypoxia{
+  left:3%!important;
+  top:78px!important;
+}
+.page[data-page="11"] .brain-cellular{
+  left:8%!important;
+  top:220px!important;
+}
+.page[data-page="11"] .brain-edema{
+  right:5%!important;
+  left:auto!important;
+  top:92px!important;
+}
+.page[data-page="11"] .brain-dysfunction{
+  right:4%!important;
+  left:auto!important;
+  top:360px!important;
+  width:240px!important;
+  max-width:240px!important;
+}
 @media(max-width:600px){
   .page[data-page="10"] .roscScene>.hand-speech{
     left:calc(50% - 45px)!important;
@@ -1241,7 +1331,7 @@ svg.ico.waterico{
 <rect fill="#91b4a9" height="20" rx="10" width="120" x="155" y="245"></rect>
 </svg><div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box; position: absolute; left: 50%; right: auto; transform: translateX(-50%); top: -70px !important; bottom: auto; width: min(260px, 80vw); max-width: 260px;">cpr: “balik diri bai, ayaw sa”</div></div>
 
-<div class="alert">PULSELESS</div><div class="brainTags"><span>HYPOXIC<br>↓ O₂</span><span>ISCHEMIC<br>↓ FLOW</span></div><div class="note">ROSC = return of spontaneous circulation.</div><div class="speech moved-brain-speech">brain: “where my oxygen homies at?”</div></div></div>
+<div class="alert">PULSELESS</div><div class="speech arrest-sequence arrest-hypoxic">HYPOXIC<br>↓ O₂</div><div class="speech arrest-sequence arrest-ischemic">ISCHEMIC<br>↓ FLOW</div><div class="speech arrest-sequence arrest-pulse">PULSE LOST / CARDIAC ARREST</div><div class="note">ROSC = return of spontaneous circulation.</div><div class="speech moved-brain-speech">brain: “where my oxygen homies at?”</div></div></div>
 <div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
 </article>
 <article class="page" data-page="10">
@@ -1269,13 +1359,13 @@ svg.ico.waterico{
 <p class="body editable" data-edit="body">jordan’s core temperature is 34.1°c after rosc. the goal is deliberate temperature control rather than automatically forcing the temperature to exactly 33°c or rapidly warming to normal. the chosen target and duration should follow pediatric post-arrest protocols while preventing fever.</p>
 <div class="take editable" data-edit="take"><b>🧠 plain-English takeaway:</b> jordan is 17, so pediatric post-arrest guidance applies: monitor core temperature continuously, avoid temperatures above 37.5°c, and use a deliberate TTM strategy rather than assuming that exactly 33°c is required.</div>
 <div class="scene"><div class="scene-title">11 • 🌡️ post-arrest temperature management</div>
-<div class="brainScene"><div class="brainWrap" style="top: 166px !important; transform: translateY(8px) !important;"><svg class="ico brainico" viewBox="0 0 420 300">
+<div class="brainScene"><div class="brainWrap" style="top: 166px !important; transform: translateY(8px) !important;"><img class="brain-overlay" src="jogu.png" alt="" aria-hidden="true"><svg class="ico brainico" viewBox="0 0 420 300">
 <path d="M205 254c-72 7-138-31-145-102-6-63 39-112 91-108 21-44 89-43 113-5 54-15 104 24 101 77 34 37 13 100-32 119-30 12-73 20-128 19z" fill="url(#brainG)" filter="url(#shadow)" stroke="#632c4a" stroke-width="10"></path>
 <path d="M145 65c28 26-7 40 25 59s-18 36 15 57M224 42c-18 30 28 43-4 69s23 38-7 65M303 70c-30 21 8 46-24 67s17 39-16 62" fill="none" stroke="#a84e7c" stroke-linecap="round" stroke-width="12"></path>
 <path d="M204 75v160" opacity=".6" stroke="#f8d1df" stroke-width="6"></path>
-</svg></div><div class="ctIcon" style="top: 204px !important; transform: translateY(8px) !important;">CT</div>
-<div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box;">thermometer: “34.1°c ko”</div><div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box;">gojo: “it should be 33 bru”</div><div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box;">thermometer: “source?”</div>
-<div class="speech" style="margin: 0px; text-align: center; box-sizing: border-box;">gojo: “wala kay salig nako?”</div>
+</svg></div><div class="ctIcon" style="top: 204px !important; transform: translateY(8px) !important;"><img class="ct-overlay" src="nanamei.png" alt="" aria-hidden="true">CT</div>
+<div class="speech brain-sequence brain-hypoxia" style="margin: 0px; text-align: center; box-sizing: border-box;">HYPOXIA + ISCHEMIA</div><div class="speech brain-sequence brain-cellular" style="margin: 0px; text-align: center; box-sizing: border-box;">CELLULAR INJURY</div><div class="speech brain-sequence brain-edema" style="margin: 0px; text-align: center; box-sizing: border-box;">CEREBRAL EDEMA</div>
+<div class="speech brain-sequence brain-dysfunction" style="margin: 0px; text-align: center; box-sizing: border-box;">NEUROLOGIC DYSFUNCTION</div>
 </div></div>
 <div class="bottomNav"><button class="pageBtn prev">← Previous</button><button class="pageBtn next">Next →</button></div>
 </article>
@@ -1391,7 +1481,7 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   // Page 09: place O2/Lung bubbles in their corresponding dashboard cards.
   p=page(8); if(p){ const b=qa('.scene>.speech',p), cards=qa('.dashboard>div',p); if(b[0]&&cards[1]) cards[1].appendChild(b[0]); if(b[1]&&cards[2]) cards[2].appendChild(b[1]); }
   // Page 10: Heart bubble belongs to heart; Monitor bubble belongs to monitor.
-  p=page(9); if(p){ const b=qa('.arrestScene>.speech',p); const h=q('.heartWrap',p), m=q('.monitorWrap',p); if(b[0]&&h) h.appendChild(b[0]); if(b[1]&&m) m.appendChild(b[1]); }
+  p=page(9); if(p){ const b=qa('.arrestScene>.speech:not(.arrest-sequence):not(.moved-brain-speech)',p); const h=q('.heartWrap',p), m=q('.monitorWrap',p); if(b[0]&&h) h.appendChild(b[0]); if(b[1]&&m) m.appendChild(b[1]); }
   // Page 11: keep the hand bubble scene-relative instead of anchoring it to the CPR artwork.
   p=page(10); if(p){ const scene=q('.roscScene',p); const hand=q('.hand-speech',p); const b=qa('.roscScene>.speech:not(.hand-speech)',p); const m=q('.monitorWrap',p); if(hand&&scene) scene.appendChild(hand); if(b[0]&&m) m.appendChild(b[0]); }
   // Page 12: brain bubble belongs to brain; CT bubble belongs to CT.
@@ -1712,6 +1802,37 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   set(p?.querySelector('.brainWrap'),'transform','translateY(8px)');
   set(p?.querySelector('.ctIcon'),'top','204px');
   set(p?.querySelector('.ctIcon'),'transform','translateY(8px)');
+  const brainSequence=all(p,'.brain-sequence');
+  brainSequence.forEach(el=>set(el,'position','absolute'));
+  const brainMobile=window.matchMedia('(max-width: 600px)').matches;
+  if(brainSequence[0]){
+    set(brainSequence[0],'left',brainMobile?'3%':'3%');
+    set(brainSequence[0],'right','auto');
+    set(brainSequence[0],'top','78px');
+    set(brainSequence[0],'width',brainMobile?'160px':'220px');
+    set(brainSequence[0],'max-width',brainMobile?'160px':'220px');
+  }
+  if(brainSequence[1]){
+    set(brainSequence[1],'left',brainMobile?'8%':'8%');
+    set(brainSequence[1],'right','auto');
+    set(brainSequence[1],'top','220px');
+    set(brainSequence[1],'width',brainMobile?'160px':'220px');
+    set(brainSequence[1],'max-width',brainMobile?'160px':'220px');
+  }
+  if(brainSequence[2]){
+    set(brainSequence[2],'left','auto');
+    set(brainSequence[2],'right','5%');
+    set(brainSequence[2],'top','92px');
+    set(brainSequence[2],'width',brainMobile?'160px':'220px');
+    set(brainSequence[2],'max-width',brainMobile?'160px':'220px');
+  }
+  if(brainSequence[3]){
+    set(brainSequence[3],'left','auto');
+    set(brainSequence[3],'right','4%');
+    set(brainSequence[3],'top','360px');
+    set(brainSequence[3],'width',brainMobile?'160px':'240px');
+    set(brainSequence[3],'max-width',brainMobile?'160px':'240px');
+  }
   const tags=p?.querySelector('.brainTags');
   set(tags,'bottom','24px');
   if(tags) tags.style.setProperty('align-items','center','important');
