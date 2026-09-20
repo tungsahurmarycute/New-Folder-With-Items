@@ -532,11 +532,18 @@ main{width:min(1180px,100%);margin:auto;padding:34px 34px 80px}.topline{display:
 .page[data-page="3"] .compare-card.good .coating{top:62px!important;}
 .page[data-page="10"] .hand-speech{left:150px!important;top:18px!important;width:220px!important;max-width:220px!important;}
 .page[data-page="10"] .roscScene>.hand-speech{
-  left:calc(15% + 130px)!important;
+  left:calc(15% + 120px)!important;
   top:103px!important;
   width:max-content!important;
   max-width:none!important;
   white-space:nowrap!important;
+}
+.page[data-page="10"] .cprVisual>.cprHands{
+  left:75px!important;
+}
+.page[data-page="10"] .cprVisual>.heartico{
+  position:relative!important;
+  left:-30px!important;
 }
 @media(max-width:600px){
   .page[data-page="10"] .roscScene>.hand-speech{
@@ -1300,13 +1307,20 @@ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>sho
   });
   const handSpeech=p?.querySelector('.roscScene>.hand-speech');
   if(handSpeech){
-    handSpeech.style.setProperty('left','calc(15% + 130px)','important');
+    handSpeech.style.setProperty('left','calc(15% + 120px)','important');
     handSpeech.style.setProperty('right','auto','important');
     handSpeech.style.setProperty('top','103px','important');
     handSpeech.style.setProperty('width','max-content','important');
     handSpeech.style.setProperty('max-width','none','important');
     handSpeech.style.setProperty('white-space','nowrap','important');
     handSpeech.style.setProperty('transform','translateX(-50%)','important');
+  }
+  const cprHands=p?.querySelector('.cprVisual>.cprHands');
+  if(cprHands) cprHands.style.setProperty('left','75px','important');
+  const cprHeart=p?.querySelector('.cprVisual>.heartico');
+  if(cprHeart){
+    cprHeart.style.setProperty('position','relative','important');
+    cprHeart.style.setProperty('left','-30px','important');
   }
 })();
 </script>
